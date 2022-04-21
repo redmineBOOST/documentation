@@ -1,0 +1,2 @@
+# documentation
+Documentation of redmineBOOST
