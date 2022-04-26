@@ -3,7 +3,7 @@ layout: documentation
 title: Reference
 id: reference
 ---
-# Language Reference (2022-04-14)
+# Language Reference (2022-04-26)
 
 The modifiers have the following meanings:
 
@@ -19,6 +19,8 @@ The modifiers have the following meanings:
 
 This enum is used in input items and controls whether the typed characters are printed or are hidden by stars.
 
+#### Fields
+
 | Name | Value | Description |
 |:-|:-|:-|
 |`Normal`|`0`|Show characters as user types them|
@@ -28,6 +30,8 @@ This enum is used in input items and controls whether the typed characters are p
 
 
 [Issues](#type-issue) can be open or closed. This enum represents the filter for the state.
+
+#### Fields
 
 | Name | Value | Description |
 |:-|:-|:-|
@@ -39,6 +43,8 @@ This enum is used in input items and controls whether the typed characters are p
 
 
 Permissions are contained in roles and control whether a [User](#type-user) or [Group](#type-group) has the right to perform an action or not.
+
+#### Fields
 
 | Name | Value | Description |
 |:-|:-|:-|
@@ -63,6 +69,8 @@ Permissions are contained in roles and control whether a [User](#type-user) or [
 
 Contained in each [Project](#type-project).
 
+#### Fields
+
 | Name | Value | Description |
 |:-|:-|:-|
 |`Boards`|`0`|Boards Module|
@@ -80,6 +88,8 @@ Contained in each [Project](#type-project).
 
 
 Contained in each [User](#type-user).
+
+#### Fields
 
 | Name | Value | Description |
 |:-|:-|:-|
@@ -114,6 +124,8 @@ The user can navigate with the `UP` or `DOWN` arrows and to continue press the `
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`description`|[`string`](#type-string) <code>&#124;</code> `undefined`||Description text which is shown when rendering the input|
@@ -135,6 +147,8 @@ A [DateInput](#type-dateinput) is an input item which renders a text input where
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`description`|[`string`](#type-string) <code>&#124;</code> `undefined`||Description text which is shown when rendering the input|
@@ -155,6 +169,8 @@ A [LineInput](#type-lineinput) is an input item which renders a text input where
 * [`LineInput`](#type-lineinput)
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -184,6 +200,8 @@ To select elements in a [MultiChoice](#type-multichoice) the user can press the 
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`description`|[`string`](#type-string) <code>&#124;</code> `undefined`||Description text which is shown when rendering the input|
@@ -205,6 +223,8 @@ saved and the editor closed it will continue with the process execution.
 * [`LineInput`](#type-lineinput)
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -230,6 +250,8 @@ Attachments can be retrieved from an [Issue](#type-issue).
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`author`|[`User`](#type-user)|readonly|[User](#type-user) which uploaded the [Attachment](#type-attachment)|
@@ -254,6 +276,8 @@ The [Authentication](#type-authentication) item contains all password related op
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`generatePassword`|[`bool`](#type-bool)||Either `generatePassword` or `password` must be set. If defined, `password` can not be defined|
@@ -277,6 +301,8 @@ Other relations are [Follows](#type-follows) and [RelatedTo](#type-relatedto).
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`issue`|[`Issue`](#type-issue)|required|[Issue](#type-issue) which blocks the containing issue|
@@ -297,6 +323,8 @@ Other relations are [BlockedBy](#type-blockedby) and [RelatedTo](#type-relatedto
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`issue`|[`Issue`](#type-issue)|required|[Issue](#type-issue) which precedes the containing issue|
@@ -315,6 +343,8 @@ Creates a Redmine [Group](#type-group).
 * [`LineInput`](#type-lineinput)
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -341,6 +371,8 @@ Creates a Redmine [Issue](#type-issue).
 * [`Note`](#type-note)
 * [`RelatedTo`](#type-relatedto)
 * [`Upload`](#type-upload)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -383,6 +415,8 @@ Issue Categories can be retrieved from an [Project](#type-project).
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`name`|[`string`](#type-string)|required|Name of the [IssueCategory](#type-issuecategory)|
@@ -400,6 +434,8 @@ Issue Priorities can be retrieved from queries e. g. with [GetIssuePriorities()]
 * [`LineInput`](#type-lineinput)
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -423,6 +459,8 @@ Issue Statuses can be retrieved from queries e.g. with [GetIssueStatuses()](#que
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`isClosed`|[`bool`](#type-bool)||Is closed state of the [IssueStatus](#type-issuestatus)|
@@ -444,6 +482,8 @@ Memberships can be retrieved from a [User](#type-user), [Group](#type-group) and
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`assignee`|[`Group`](#type-group) <code>&#124;</code> [`User`](#type-user)|required|Assignee of the [Membership](#type-membership)|
@@ -463,6 +503,8 @@ Appends a [Note](#type-note) to the containing [Issue](#type-issue).
 * [`LineInput`](#type-lineinput)
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -486,6 +528,8 @@ Projects can be retrieved e.g. with queries like [GetProjects()](#query-getproje
 * [`TextInput`](#type-textinput)
 * [`Membership`](#type-membership)
 * [`Project`](#type-project)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -518,6 +562,8 @@ Other relations are [BlockedBy](#type-blockedby) and [Follows](#type-follows).
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`issue`|[`Issue`](#type-issue)|required|[Issue](#type.issue) which relates to the containing issue|
@@ -538,6 +584,8 @@ Removes a set of [Attachments](#type-attachment).
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`attachments`|`[`[`Attachment`](#type-attachment)`]`||[Attachments](#type-attachment) which shall be deleted|
@@ -555,6 +603,8 @@ Remove [Issues](#type-issue) from a [Project](#type-project)
 * [`LineInput`](#type-lineinput)
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -574,6 +624,8 @@ Remove [Memberships](#type-membership)
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`memberships`|`[`[`Membership`](#type-membership)`]`||[Memberships](#type-membership) to remove|
@@ -591,6 +643,8 @@ Remove [Projects](#type-project)
 * [`LineInput`](#type-lineinput)
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -610,6 +664,8 @@ Removes a set of isssue relations e.g. [BlockedBy](#type-blockedby), [Follows](#
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`relations`|`[`[`BlockedBy`](#type-blockedby) <code>&#124;</code> [`Follows`](#type-follows) <code>&#124;</code> [`RelatedTo`](#type-relatedto)`]`|required|Relations which should be deleted|
@@ -627,6 +683,8 @@ A [Role](#type-role) a [User](#type-user) can have on a [Project](#type-project)
 * [`LineInput`](#type-lineinput)
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -648,6 +706,8 @@ Represents a Redmine [Tracker](#type-tracker).
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`defaultStatus`|[`IssueStatus`](#type-issuestatus)|required|Default [IssueStatus](#type-issuestatus) of the [Tracker](#type-tracker)|
@@ -667,6 +727,8 @@ Updates an existing [Group](#type-group).
 * [`LineInput`](#type-lineinput)
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -695,6 +757,8 @@ Updates an existing [Issue](#type-issue).
 * [`Note`](#type-note)
 * [`RelatedTo`](#type-relatedto)
 * [`Upload`](#type-upload)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -728,6 +792,8 @@ Updates an existing [Membership](#type-membership).
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`addRoles`|`[`[`Role`](#type-role)`]`||Roles to be added to the [Membership](#type-membership), can not be set if 'roles' is set|
@@ -750,6 +816,8 @@ Updates an existing [Project](#type-project).
 * [`TextInput`](#type-textinput)
 * [`Membership`](#type-membership)
 * [`Project`](#type-project)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -781,6 +849,8 @@ Updates an existing [User](#type-user).
 * [`TextInput`](#type-textinput)
 * [`Authentication`](#type-authentication)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`firstname`|[`string`](#type-string)||Firstname of the [User](#type-user)|
@@ -805,6 +875,8 @@ Appends an [Attachment](#type-attachment) to an [Issue](#type-issue).
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 
+#### Properties
+
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
 |`description`|[`string`](#type-string) <code>&#124;</code> `undefined`||Description of the [Upload](#type-upload)|
@@ -824,6 +896,8 @@ Creates a Redmine [User](#type-user).
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 * [`Authentication`](#type-authentication)
+
+#### Properties
 
 |Name|Type|Attributes|Description|
 |:-|:-|:-|:-|
@@ -869,11 +943,15 @@ Returns a single [Group](#type-group).
 
 `GetGroup(id: int32): Group`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`id`|[`int32`](#type-int32)|Redmine id of group to return|||
 
 `GetGroup(name: string): Group`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
@@ -897,6 +975,8 @@ Returns a single [Issue](#type-issue).
 
 `GetIssue(id: int32): Issue`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`id`|[`int32`](#type-int32)|Redmine id of issue to return|||
@@ -909,6 +989,8 @@ Returns a single [IssueCategory](#type-issuecategory).
 **Requires Admin:** no
 
 `GetIssueCategory(id: int32): IssueCategory`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
@@ -923,6 +1005,8 @@ Returns an array of [Issue Priorities](#type-issuepriority).
 
 `GetIssuePriorities(includeInactive: bool): [IssuePriority]`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`includeInactive`|[`bool`](#type-bool)|Defaults to `true`||4.1.0|
@@ -936,11 +1020,15 @@ Returns a single [IssuePriority](#type-issuepriority).
 
 `GetIssuePriority(id: int32): IssuePriority`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`id`|[`int32`](#type-int32)|Redmine id of issue priority to return|||
 
 `GetIssuePriority(name: string): IssuePriority`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
@@ -954,6 +1042,8 @@ Returns an array of [Issues](#type-issue) filtered by the specified parameters.
 **Requires Admin:** no
 
 `GetIssues(assignedTo: Group|User|undefined, project: Project|undefined, status: IssueStatus|IssueStatusFilter|undefined, tracker: Tracker|undefined): [Issue]`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
@@ -971,11 +1061,15 @@ Returns a single [IssueStatus](#type-issuestatus).
 
 `GetIssueStatus(id: int32): IssueStatus`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`id`|[`int32`](#type-int32)|Redmine id of issue status to return|||
 
 `GetIssueStatus(name: string): IssueStatus`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
@@ -999,6 +1093,8 @@ Returns a single [Project](#type-project).
 
 `GetProject(identifier: string): Project`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`identifier`|[`string`](#type-string)|Redmine id of project to return|||
@@ -1012,12 +1108,16 @@ Returns a single [Group](#type-group) in a [Project](#type-project).
 
 `GetProjectGroup(id: int32, project: Project): Group`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`id`|[`int32`](#type-int32)|Redmine id of group in project to return|||
 |`project`|[`Project`](#type-project)|Project from which the group is retrieved|||
 
 `GetProjectGroup(name: string, project: Project): Group`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
@@ -1033,6 +1133,8 @@ Returns an array of [Groups](#type-group) of a [Project](#type-project).
 
 `GetProjectGroups(project: Project): [Group]`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`project`|[`Project`](#type-project)|Project from which the groups are retrieved|||
@@ -1046,6 +1148,8 @@ Returns an array of [IssueCategories](#type-issuecategory) of a [Project](#type-
 
 `GetProjectIssueCategories(project: Project): [IssueCategory]`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`project`|[`Project`](#type-project)|Project from which the issue categories are retrieved|||
@@ -1058,6 +1162,8 @@ Returns a single [IssueCategory](#type-issuecategory) in a [Project](#type-proje
 **Requires Admin:** no
 
 `GetProjectIssueCategory(name: string, project: Project): IssueCategory`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
@@ -1073,12 +1179,16 @@ Returns a single [Membership](#type-membership) in a [Project](#type-project).
 
 `GetProjectMembership(group: Group, project: Project): Membership`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`group`|[`Group`](#type-group)|[Group](#type-group) of which the membership is to be returned|||
 |`project`|[`Project`](#type-project)|[Project](#type-project) from which the memberships are retrieved|||
 
 `GetProjectMembership(project: Project, user: User): Membership`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
@@ -1103,6 +1213,8 @@ Returns a single [User](#type-user) in a [Project](#type-project).
 
 `GetProjectUser(login: string, project: Project): User`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`project`|[`Project`](#type-project)|Project from which the user is retrieved|||
@@ -1117,6 +1229,8 @@ Returns an array of [Users](#type-user) of a [Project](#type-project).
 
 `GetProjectUsers(project: Project): [User]`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`project`|[`Project`](#type-project)|Project from which the users are retrieved|||
@@ -1130,11 +1244,15 @@ Returns a single [Role](#type-role).
 
 `GetRole(id: int32): Role`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`id`|[`int32`](#type-int32)|Redmine id of role to return|||
 
 `GetRole(name: string): Role`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
@@ -1158,11 +1276,15 @@ Returns a single [Tracker](#type-tracker).
 
 `GetTracker(id: int32): Tracker`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`id`|[`int32`](#type-int32)|Redmine id of tracker to return|||
 
 `GetTracker(name: string): Tracker`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
@@ -1186,11 +1308,15 @@ Returns a single [User](#type-user).
 
 `GetUser(id: int32): User`
 
+#### Parameters
+
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
 |`id`|[`int32`](#type-int32)|Redmine id of user to return|||
 
 `GetUser(login: string): User`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
@@ -1204,6 +1330,8 @@ Returns an array of [Users](#type-user) filtered by the specified parameters.
 **Requires Admin:** yes
 
 `GetUsers(group: Group|undefined, name: string|undefined, userStatus: undefined|UserStatus): [User]`
+
+#### Parameters
 
 |Parameter|Type|Description|Attributes|Minimum Redmine Version|
 |:-|:-|:-|:-|:-|
