@@ -201,7 +201,7 @@ Each Query in the example returns a [User](#user). If the [User](#user) is not f
 ## <a name="itemTracking"></a> Item Tracking
 
 **redmineBOOST** automatically tracks Redmine Items.
-This means that Redmine Items which are referenced inside [properties](#propertyDefinitions) or [fields](#fieldDeclarations) are automatically being removed when they are deleted.
+This means that Redmine Items which are referenced inside [properties](#propertyDefinitions) or [fields](#fieldDeclarations) are automatically removed when they are deleted.
 
 The behaviour is type specific:
 * When the type is an `array` the deleted item will just be removed from the array.
