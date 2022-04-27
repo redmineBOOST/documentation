@@ -1,0 +1,19 @@
+name: Documentation CI
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  push-documentation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger website repository update
+        run: |
+          curl --request POST https://api.github.com/repos/redmineBOOST/redmineBOOST.github.io/dispatches \
+          --header 'Accept: application/vnd.github.v3+json' \
+          --header 'Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}' \
+          --data '{"event_type": "trigger-website-update", "client_payload": {}}'
