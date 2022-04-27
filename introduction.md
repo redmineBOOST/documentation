@@ -130,11 +130,11 @@ redmineBOOST - Configuration
 
 Manage Redmine Identities
 
-Insert, change or remove Redmine Identity
-[↑/↓] Select identity  [INS] Add identity  [ENTER] Change identity  [DEL] Remove identity
+Add, change or remove Redmine Identity
+[↑/↓] Select identity  [A] Add identity  [ENTER] Change identity  [R] Remove identity
 ```
 
-The Manage Redmine Identities page consists of a list which can be edited by adding (`INS` key), changing (`ENTER` key with a selected identity) or removing (`DEL` key with a selected identity) indenties. It is possible to have multiple Redmine Identities. Press `INS` key to create the first Redmine Identity:
+The Manage Redmine Identities page consists of a list which can be edited by adding (`A` key), changing (`ENTER` key with a selected identity) or removing (`R` key with a selected identity) indenties. It is possible to have multiple Redmine Identities. Press `A` key to create the first Redmine Identity:
 
 ```
 redmineBOOST - Configuration
@@ -181,8 +181,8 @@ redmineBOOST - Configuration
 
 Manage Redmine Identities
 
-Insert, change or remove Redmine Identity
-[↑/↓] Select identity  [INS] Add identity  [ENTER] Change identity  [DEL] Remove identity
+Add, change or remove Redmine Identity
+[↑/↓] Select identity  [A] Add identity  [ENTER] Change identity  [R] Remove identity
 CustomerRedmine: https://mycompany/redmine [65e5e5333e9390d27e304cc40c568683c7aaa5aa]
 ```
 
