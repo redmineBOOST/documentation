@@ -5,7 +5,7 @@ id: language_guide
 ---
 # <a name="languageGuide"></a> Language Guide
 
-The **redmineBOOST** Language v1.0 (RBO) is specially designed to describe Redmine tasks. RBO is highly declarative in a way that each task can be described as an item. An item has properties which can be accessed and if it is not readonly it can be modified. To get the necessary data from Redmine there are queries which can be stored into fields or directly passed into properties.
+The **redmineBOOST** Language v1.0 (RBO) is specially designed to describe Redmine tasks as processes. RBO is highly declarative in a way that each task can be described as an item. An item has properties which can be accessed and if they are not readonly can be modified. To get the necessary data from Redmine there are queries which can be stored into fields or directly passed into properties.
 
 The main design goals of the language are readability, error reduction and intuitive handling of compactness.
 
