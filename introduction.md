@@ -17,7 +17,7 @@ By creating the right Process Descriptions you can map business processes to com
 
 > Redmine version *3.0.0* or higher is supported.
 
-The tool is [.NET](https://dotnet.microsoft.com/en-us/) based and is available for Linux®, OS X® and Windows®.
+The tool is [.NET](https://dotnet.microsoft.com/en-us/) based and is available for Linux®, macOS® and Windows®.
 
 This is an example of a simple Process Description to create a Redmine issue in a project:
 ```
