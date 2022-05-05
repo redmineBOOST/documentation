@@ -582,7 +582,7 @@ Issue Categories can be retrieved from an [Project](#type-project).
 ### <a name='type-issuepriority'></a> IssuePriority
 
 
-Issue Priorities can be retrieved from queries e. g. with [GetIssuePriorities()](#query-getissuepriorities).
+Issue Priorities can be retrieved from queries e. g. with [GetIssuePriorities()](#type-getissuepriorities).
 
 **Instantiable:** no
 
@@ -610,7 +610,7 @@ Issue Priorities can be retrieved from queries e. g. with [GetIssuePriorities()]
 
 An [IssueStatus](#type-issuestatus) is the state if an issue is closed or not.
 
-Issue Statuses can be retrieved from queries e.g. with [GetIssueStatuses()](#query-getissuestatuses) or the [Issue](#type-issue).
+Issue Statuses can be retrieved from queries e.g. with [GetIssueStatuses()](#type-getissuestatuses) or the [Issue](#type-issue).
 
 **Instantiable:** no
 
@@ -686,7 +686,7 @@ Appends a [Note](#type-note) to the containing [Issue](#type-issue).
 
 Represents a Redmine [Project](#type-project).
 
-Projects can be retrieved e.g. with queries like [GetProjects()](#query-getprojects).
+Projects can be retrieved e.g. with queries like [GetProjects()](#type-getprojects).
 
 **Instantiable:** yes (requires admin)
 
