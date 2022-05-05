@@ -1223,7 +1223,7 @@ Returns the local system date.
 
 **Requires Admin:** no
 
-`GetCurrentDateTime(): date`
+`GetCurrentDateTime()`
 
 **Return type:** [`date`](#type-date)
 ### <a name='type-getcurrentuser'></a> GetCurrentUser
@@ -1232,7 +1232,7 @@ Retrieving the [User](#type-user) whose credentials are used to access the [REST
 
 **Requires Admin:** no
 
-`GetCurrentUser(): User`
+`GetCurrentUser()`
 
 **Return type:** [`User`](#type-user)
 ### <a name='type-getgroup'></a> GetGroup
@@ -1262,7 +1262,7 @@ Returns an array of [Groups](#type-group).
 
 **Requires Admin:** yes
 
-`GetGroups(): [Group]`
+`GetGroups()`
 
 **Return type:** `[`[`Group`](#type-group)`]`
 ### <a name='type-getissue'></a> GetIssue
@@ -1378,7 +1378,7 @@ Returns an array of [Issue Statuses](#type-issuestatus).
 
 **Requires Admin:** no
 
-`GetIssueStatuses(): [IssueStatus]`
+`GetIssueStatuses()`
 
 **Return type:** `[`[`IssueStatus`](#type-issuestatus)`]`
 ### <a name='type-getproject'></a> GetProject
@@ -1500,7 +1500,7 @@ Returns an array of [Projects](#type-project).
 
 **Requires Admin:** no
 
-`GetProjects(): [Project]`
+`GetProjects()`
 
 **Return type:** `[`[`Project`](#type-project)`]`
 ### <a name='type-getprojectuser'></a> GetProjectUser
@@ -1561,7 +1561,7 @@ Returns an array of [Roles](#type-role).
 
 **Requires Admin:** no
 
-`GetRoles(): [Role]`
+`GetRoles()`
 
 **Return type:** `[`[`Role`](#type-role)`]`
 ### <a name='type-gettracker'></a> GetTracker
@@ -1591,7 +1591,7 @@ Returns an array of [Tracker](#type-tracker).
 
 **Requires Admin:** no
 
-`GetTrackers(): [Tracker]`
+`GetTrackers()`
 
 **Return type:** `[`[`Tracker`](#type-tracker)`]`
 ### <a name='type-getuser'></a> GetUser
