@@ -3,7 +3,7 @@ layout: documentation
 title: Reference
 id: reference
 ---
-# Language Reference (2022-05-05)
+# Language Reference (2022-05-06)
 
 The modifiers have the following meanings:
 
@@ -173,7 +173,7 @@ The generic parameter `T` modifies the element type of the `options` array and i
 The user can navigate with the `UP` or `DOWN` arrows and to continue press the `ENTER` key.
 
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -202,7 +202,7 @@ The user can navigate with the `UP` or `DOWN` arrows and to continue press the `
 
 A [DateInput](#type-dateinput) is an input item which renders a text input where the user can specify a date.
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -231,7 +231,7 @@ A [DateInput](#type-dateinput) is an input item which renders a text input where
 
 A [LineInput](#type-lineinput) is an input item which renders a text input where the user can specify a text.
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -271,7 +271,7 @@ The generic parameter `T` modifies the element type of the `options` and `values
 The user can navigate with the `UP` or `DOWN` arrows.
 To select elements in a [MultiChoice](#type-multichoice) the user can press the `SPACE` and to continue the `ENTER` key.
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -301,7 +301,7 @@ To select elements in a [MultiChoice](#type-multichoice) the user can press the 
 A [TextInput](#type-textinput) is a Multi-Line input item which opens the external text editor with a temporary file and after the file is
 saved and the editor closed it will continue with the process execution.
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -367,7 +367,7 @@ Attachments can be retrieved from an [Issue](#type-issue).
 
 The [Authentication](#type-authentication) item contains all password related options for an user.
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -398,7 +398,7 @@ Creates a [BlockedBy](#type-blockedby) issue relation.
 The [BlockedBy](#type-blockedby) item is an issue relation where the containing issue is blocked by the issue specified in the property.
 Other relations are [Follows](#type-follows) and [RelatedTo](#type-relatedto).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -420,7 +420,7 @@ Creates a [Follows](#type-follows) issue relation.
 The [Follows](#type-follows) item is an issue relation where the containing issue is following the issue specified in the property.
 Other relations are [BlockedBy](#type-blockedby) and [RelatedTo](#type-relatedto).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -469,7 +469,7 @@ Creates a Redmine [Group](#type-group).
 
 Creates a Redmine [Issue](#type-issue).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -637,7 +637,7 @@ Memberships include users of a project and their roles.
 
 Memberships can be retrieved from a [User](#type-user), [Group](#type-group) and even a [Project](#type-project).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -663,7 +663,7 @@ Memberships can be retrieved from a [User](#type-user), [Group](#type-group) and
 
 Appends a [Note](#type-note) to the containing [Issue](#type-issue).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -688,7 +688,7 @@ Represents a Redmine [Project](#type-project).
 
 Projects can be retrieved e.g. with queries like [GetProjects()](#type-getprojects).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -747,7 +747,7 @@ Projects can be retrieved e.g. with queries like [GetProjects()](#type-getprojec
 The [RelatedTo](#type-relatedto) item is an issue relation where the containing issue is related to the issue specified in the property.
 Other relations are [BlockedBy](#type-blockedby) and [Follows](#type-follows).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -767,7 +767,7 @@ Other relations are [BlockedBy](#type-blockedby) and [Follows](#type-follows).
 
 Removes a set of [Attachments](#type-attachment).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Minimum Redmine Version:** 3.3.0
 
@@ -789,7 +789,7 @@ Removes a set of [Attachments](#type-attachment).
 
 Remove [Issues](#type-issue) from a [Project](#type-project)
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -809,7 +809,7 @@ Remove [Issues](#type-issue) from a [Project](#type-project)
 
 Remove [Memberships](#type-membership)
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -829,7 +829,7 @@ Remove [Memberships](#type-membership)
 
 Remove [Projects](#type-project)
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -849,7 +849,7 @@ Remove [Projects](#type-project)
 
 Removes a set of isssue relations e.g. [BlockedBy](#type-blockedby), [Follows](#type-follows) or [RelatedTo](#type-relatedto).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -953,7 +953,7 @@ Updates an existing [Group](#type-group).
 
 Updates an existing [Issue](#type-issue).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -1021,7 +1021,7 @@ Updates an existing [Issue](#type-issue).
 
 Updates an existing [Membership](#type-membership).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -1050,7 +1050,7 @@ Updates an existing [Membership](#type-membership).
 
 Updates an existing [Project](#type-project).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
@@ -1144,7 +1144,7 @@ Updates an existing [User](#type-user).
 
 Appends an [Attachment](#type-attachment) to an [Issue](#type-issue).
 
-**Instantiable:** yes (requires admin)
+**Instantiable:** yes
 
 **Permitted child items:**
 * [`Choice`](#type-choice)
