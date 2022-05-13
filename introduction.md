@@ -19,6 +19,8 @@ By creating the right Process Descriptions you can map business processes to com
 
 The tool is [.NET](https://dotnet.microsoft.com/en-us/) based and is available for Linux®, macOS® and Windows®.
 
+The macOS release is currently distributed as an unsigned executable. To launch **redmineBOOST** you may have to follow the steps provided by Apple on how to [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616).
+
 This is an example of a simple Process Description to create a Redmine issue in a project:
 ```
 // create-issue.rbo
