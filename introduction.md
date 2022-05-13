@@ -117,8 +117,7 @@ Arguments: --new-window --wait --goto ${Filepath}:${Line}
 ...
 ```
 
-On macOS you have to point directly to the executable inside the application bundle. For Visual Studio Code the bundle is called Visual Studio Code.app but you have to set the file path to `/Applications/Visual Studio Code.app/Contents/MacOS/Electron`.
-
+If on macOS you want to use an editor that is distributed as an application bundle you have to point directly to the executable inside the bundle. Just pointing to the bundle will not work. For Visual Studio Code the bundle is called Visual Studio Code.app but you have to set the file path to `/Applications/Visual Studio Code.app/Contents/MacOS/Electron`.
 
 > It is important that the text editor is closed completely after the user has entered and saved its input, because **redmineBOOST** waits until the text editor process is finished to continue execution.
 
