@@ -46,7 +46,7 @@ $ rboost <command>|<process-file> [command-parameters]
 
 **redmineBOOST** Process Description file to execute.
 
-To simply execute a Process Desription just provide the filename:
+To simply execute a Process Description just provide the filename:
 ```
 $ rboost create-issue.rbo
 ```
@@ -104,7 +104,7 @@ File Path: _
 Arguments:
 ```
 
-In this page the full filepath to the text editor must be provided. At first the `File Path` input is focused; enter file path to text editor. Press `ENTER` key to jump to `Arguments` input. With arguments you can provide the text editor with non default file opening arguments. Default behavior is that **redmineBOOST** will put the file to open behind the text editors file path when a file will be opened. By specifying `Arguments` this behavior can be refined for example to jump to a required line.
+In this page the full file path to the text editor must be provided. At first the `File Path` input is focused; enter file path to text editor. Press `ENTER` key to jump to `Arguments` input. With arguments you can provide the text editor with non default file opening arguments. Default behavior is that **redmineBOOST** will put the file to open behind the text editors file path when a file will be opened. By specifying `Arguments` this behavior can be refined for example to jump to a required line.
 
 A text editor configuration for Visual Studio Code looks like this:
 
@@ -117,7 +117,7 @@ Arguments: --new-window --wait --goto ${Filepath}:${Line}
 
 > It is important that the text editor is closed completely after the user has entered and saved its input, because **redmineBOOST** waits until the text editor process is finished to continue execution.
 
-Press `ENTER` key to accept the text editor configuation.
+Press `ENTER` key to accept the text editor configuration.
 
 ### Manage Redmine Identities
 
@@ -134,7 +134,7 @@ Add, change or remove Redmine Identity
 [↑/↓] Select identity  [A] Add identity  [ENTER] Change identity  [R] Remove identity
 ```
 
-The Manage Redmine Identities page consists of a list which can be edited by adding (`A` key), changing (`ENTER` key with a selected identity) or removing (`R` key with a selected identity) indenties. It is possible to have multiple Redmine Identities. Press `A` key to create the first Redmine Identity:
+The Manage Redmine Identities page consists of a list which can be edited by adding (`A` key), changing (`ENTER` key with a selected identity) or removing (`R` key with a selected identity) identities. It is possible to have multiple Redmine Identities. Press `A` key to create the first Redmine Identity:
 
 ```
 redmineBOOST - Configuration
@@ -188,7 +188,7 @@ CustomerRedmine: https://mycompany/redmine [65e5e5333e9390d27e304cc40c568683c7aa
 
 ## <a name="runAProcess"></a> Run a Process
 
-To execute a Process Desription just provide the filename:
+To execute a Process Description just provide the filename:
 ```
 $ rboost <filename>
 ```
@@ -200,7 +200,7 @@ Select Redmine Identity to run process on
 CustomerRedmine: https://mycompany/redmine
 ```
 
-Press the `UP` or `DOWN` arrows to select your redmine identity.
+Press the `UP` or `DOWN` arrows to select your Redmine identity.
 
 To start the execution of the process description with the selected identity press `ENTER`.
 
