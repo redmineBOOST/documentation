@@ -108,7 +108,7 @@ Arguments:
 
 In this page the full file path to the text editor must be provided. At first the `File Path` input is focused; enter file path to text editor. Press `ENTER` key to jump to `Arguments` input. With arguments you can provide the text editor with non default file opening arguments. Default behavior is that **redmineBOOST** will put the file to open behind the text editors file path when a file will be opened. By specifying `Arguments` this behavior can be refined for example to jump to a required line.
 
-A text editor configuration for Visual Studio Code looks like this:
+A text editor configuration for Visual Studio Code under Windows looks like this:
 
 ```
 ...
@@ -116,6 +116,8 @@ File Path: C:\Users\developer\AppData\Local\Programs\Microsoft VS Code\Code.exe
 Arguments: --new-window --wait --goto ${Filepath}:${Line}
 ...
 ```
+
+If on macOS you want to use an editor that is distributed as an application bundle you have to point directly to the executable inside the bundle. Just pointing to the bundle will not work. For Visual Studio Code the bundle is called Visual Studio Code.app but you have to set the file path to `/Applications/Visual Studio Code.app/Contents/MacOS/Electron`.
 
 > It is important that the text editor is closed completely after the user has entered and saved its input, because **redmineBOOST** waits until the text editor process is finished to continue execution.
 
