@@ -69,6 +69,10 @@ Executes specified **redmineBOOST** Process Description file. It's a longer vers
 
 ### Options
 
+`-verbose`
+
+Increases the level of log messages.
+
 `-whatif`
 
 Execute Process Description without mutating Redmine.
