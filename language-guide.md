@@ -5,9 +5,9 @@ id: language_guide
 ---
 # <a name="languageGuide"></a> Language Guide
 
-The **redmineBOOST** Language v1.0 (RBO) is specially designed to describe Redmine tasks as processes. RBO is highly declarative in a way that each task can be described as an item. An item has properties which can be accessed and if they are not readonly can be modified. To get the necessary data from Redmine there are queries which can be stored into fields or directly passed into properties.
+The **redmineBOOST** Language v1.0 (RBO) is specially designed to describe Redmine tasks as processes. RBO is highly declarative in a way that each task can be described as an item. An item has properties which can be accessed and modified if they are not readonly. To get the necessary data from Redmine there are queries which can be stored into fields or directly passed into properties.
 
-The main design goals of the language are readability, error reduction and intuitive handling of compactness.
+The main design goals of the strong typed language are readability, error reduction and intuitive handling of compactness.
 
 ## Notation
 The documentation will use the following notations:
@@ -26,7 +26,7 @@ The syntax is partially explained by a kind of Backus–Naur Form (BNF) with the
 
 `+`: Repeat from 1 to n times.
 
-`<abc>`: A placeholder with the name abc.
+`<abc>`: A placeholder with the semantic meaning 'abc'.
 
 ## <a name="itemInstantiations"></a> Item Instantiations
 
@@ -36,43 +36,43 @@ The format of an item instantiation is defined as follows:
 
 `<predefinedTypeSpecifier> { (<propertyDefinition> | <itemInstantiation> | <fieldDeclaration>)* }`
 
-The Item scope `<predefinedTypeSpecifier> {...}` can contain multiple [Property Definitions](#propertyDefinitions), [Item Instantiations](#itemInstantiations) and [Local Field Declarations](#localFieldDeclarations).
+The Item scope `<predefinedTypeSpecifier> {...}` can contain multiple [Property Definitions](#propertyDefinitions), [Item Instantiations](#itemInstantiations) and [Local Field Declarations](#itemFieldDeclarations).
 
 The instantiable Items can be defined as follows:
 ```
 let issue1: Issue = Issue {
     project: GetProject(identifier="project1")
-    subject: "Example Subject"
+    subject: "Parent Issue Subject"
     tracker: GetTracker(name="tracker1")
 
     Issue {
         project: GetProject(identifier="project1")
-        subject: "Example Subject"
+        subject: "Child Issue Subject"
         tracker: GetTracker(name="tracker1")
     }
 }
 ```
 
-In the example the Issue with the *identifier* `issue1` was defined with all required properties (`project`, `subject` and `tracker`). Furthermore it contains a top-level nested Issue. This nesting automatically results in setting the parent property of the nested Issue to `issue1`. As a result Redmine would create an Issue containing a Child-Issue.
+The Issue in the example with *identifier* `issue1` was defined with all required properties (`project`, `subject` and `tracker`). Furthermore it also contains a nested primary Issue. The nesting of the primary item automatically results in setting the parent property of the nested Issue to `issue1`. As a result an Issue with subject *Parent Issue Subject* in project *project1* containing a Child-Issue with subject *Child Issue Subject* would be created in Redmine.
 
-Top-level Item Instantiations result in structural child items, otherwise the items are treated as independent.
+Primary Item Instantiations result in structural child items, otherwise the items are treated as independent items.
 
 Example:
 ```
 let issue1: Issue = Issue {
     project: GetProject(identifier="project1")
-    subject: "Example Subject"
+    subject: "Parent Issue Subject"
     tracker: GetTracker(name="tracker1")
 
     let issue2Subject: Issue = Issue {
         project: GetProject(identifier="project1")
-        subject: "Example Subject"
+        subject: "Child Issue Subject"
         tracker: GetTracker(name="tracker1")
     }.subject
 }
 ```
 
-In this example, the nested issue is treated as a standalone issue because its `subject` property is accessed immediately. Therefore, it is not a child Issue of `issue1`.
+In this example, the nested issue is no primary item because its `subject` property is accessed immediately. Therefore, it is not a child Issue of `issue1`.
 
 ### <a name="propertyDefinitions"></a> Property Definitions
 
@@ -90,22 +90,17 @@ The format of a property definition is defined as follows:
 
 `Newline | ;`: Each property definition must end with a line break or a semicolon.
 
-### <a name="localFieldDeclarations"></a> Local Field Declarations
+### <a name="itemFieldDeclarations"></a> Item Field Declarations
 
-Fields can be assigned with Literals, Enumerations constants, Items and Query invocation results.
-
-A local field declaration is initialized immediately when the containing Item is declared.
+Fields can be assigned with Literals, Enumeration values, Items and Query invocation results.
 
 > Fields have the type specified so the assigning type has to match the defined field type.
 
 Field identifiers must begin with a lowercase letter.
 
-The `let` keyword changes the visibility of the field for the area that contains it, while the `global` keyword sets the visibility of the field to the global area.
-Therefore it is accessible from everywhere.
-
 Fields are declared as follows:
 
-`(let | global) <identifier>: <typeSpecifier> = <expression> (Newline | ;)`
+`let <identifier>: <typeSpecifier> = <expression> (Newline | ;)`
 
 `identifier`: Identifier used to reference the field.
 
@@ -146,13 +141,13 @@ The keyword `global` is unnecessary in this case, because global fields are alre
 
 ## <a name="scopes"></a> Scopes
 
-In general a Scope is a concept that refers to where values of [properties](#propertyDefinitions) and [fields](#localFieldDeclarations) can be accessed.
+In general a Scope is a concept that refers to where [properties](#propertyDefinitions) and [fields](#itemFieldDeclarations) can be accessed from.
 
 There are basically two scope types:
 * *Global scope*  (a value in the global scope can be used anywhere in the entire process)
 * *Item block scope* (only visible within a `{ ... }` codeblock)
 
-Each [property](#propertyDefinitions) and [field](#localFieldDeclarations) is visible in all inner scopes. When the user refers to a property, the property is searched from the referenced location upwards in all scopes and the first property matching the name is chosen.
+Each [property](#propertyDefinitions) and [field](#itemFieldDeclarations) is visible in all inner scopes. When the user refers to a property, the property is searched from the referenced location upwards in all scopes and the first property matching the name is chosen.
 
 Example:
 ```
@@ -172,16 +167,15 @@ In the example the Issue was defined with all required properties (`project`, `s
 
 ## <a name="queries"></a> Queries
 
-Queries are basically getters for Redmine data. Each time someone wants to access access an existing element of Redmine they have to use a Query.
+Queries are basically getters for Redmine data. Each time Redmine data is required a Query has to be used.
 
 > The parameters of a query must always be named explicitly.
 
-All properties of the object returned by the query are `readonly`.
-To change data of the item returned by the query, one should use the special update item.
+All properties of the returned item are considered `readonly`; query-returned Items are disconncted from the Redmine item. To change data of an item returned by a query an appropriate update item has to be used.
 
 Queries are defined as follows:
 
-`<identifier> ( (<argumentIdentifier>=<expression>)? (,<argumentIdentifier>=<expression>)* )`
+`<identifier> ( (<argumentIdentifier>=<expression> (,<argumentIdentifier>=<expression>)* )? )`
 
 `identifier`: Identifier of the query.
 
@@ -200,8 +194,9 @@ Each Query in the example returns a [User](#user). If the [User](#user) is not f
 
 ## <a name="itemTracking"></a> Item Tracking
 
-**redmineBOOST** automatically tracks Redmine Items.
-This means that Redmine Items which are referenced inside [properties](#propertyDefinitions) or [fields](#fieldDeclarations) are automatically removed when they are deleted.
+**redmineBOOST** automatically tracks the lifetime of Redmine Items. This means that Redmine Items which are referenced inside [properties](#propertyDefinitions) or [fields](#fieldDeclarations) are automatically removed when they are cease to exist in Redmine.
+
+> Lifetime tracking only works for changes through the *redmineBOOST* process itself. External changes can't be detected.
 
 The behaviour is type specific:
 * When the type is an `array` the deleted item will just be removed from the array.
@@ -210,7 +205,7 @@ The behaviour is type specific:
 
 ## <a name="stringInterpolations"></a> String Interpolations
 
-RBO supports basic string interpolation in Single-Line and Multi-Line Strings.
+RBO supports string interpolation in Single-Line and Multi-Line Strings.
 As default each string literal is an interpolated string that may contain interpolation expressions. When an interpolated string is resolved to a result string, elements containing interpolation expressions are replaced by the string representations of the expression results.
 A String Interpolation is defined as follows:
 ```
@@ -244,7 +239,7 @@ An array is a list of elements of the type `T`. An array looks like this: `[T]`.
 
 ### <a name="enum"></a> Enum
 
-An enumeration is a reusable type that has a name and contains a set of uniquely named constants.
+An enumeration is a reusable type that has a name and contains a set of uniquely named constant values.
 
 The user can not declare own enums.
 
@@ -286,10 +281,11 @@ User {
 }
 ```
 
+The `Authentication` item can only be instantiated inside the `User` and `UpdateUser` item.
+
 ### <a name="genericItem"></a> Generic Item
 
-**redmineBOOST** supports generic items.
-A generic item can use its type parameter `T` as the type of its return value or as the type of one of its properties.
+**redmineBOOST** supports Generic Items. Generic Items can have multiple type parameters. How the parameters are used is item dependent and has to be looked up in the Language Reference.
 
 Example:
 ```
@@ -298,13 +294,11 @@ Choice<string> {
     options: ["Blue Pill", "Red Pill"]
 }
 ```
-
-In the example the generic parameter was explicitely set to `string`. This sets the readonly property `value` and the element type of `options` to `string`. The property `options` is now of the type `[string]`.
+The example demonstrates the instantiation of the Generic Item `Choice<T>` which has one type parameter `T` which is set to `string`.
 
 ### <a name="union"></a> Union
 
-A union type describes a value that can be one of several types. 
-We use the vertical bar (`|`) to separate each type, so `string | undefined` is the type of a value that can be a `string` or `undefined`.
+A union type describes a value that can be one of several types. The pipe character (`|`) is used to separate each type, so `string | undefined` is the type of a value that can be a `string` or `undefined`. Hence Unions can be used to express optionality in combination with `undefined`.
 
 ### <a name="string"></a>String
 
@@ -312,7 +306,7 @@ The String type represents text as a sequence of UTF-16 code units.
 
 A `string` is a sequential collection of characters that's used to represent text.
 
-The `string` type can contain Multi-Line aswell as Single-Line text.
+The `string` type can contain Multi-Line as well as Single-Line text.
 
 Because of [string interpolations](#stringInterpolations) the `$` sign has to be escaped by prefixing it with `` ` ``.
 
@@ -381,7 +375,7 @@ restricted
 
 ### <a name="stringLiteral"></a>String Literal
 
-There are two ways in declaring a string, Single-Line and Multi-Line. A Single-Line String always starts and ends with `"` and has to be declared in one line. A Multi-Line String however can be declared in multiple lines and always starts with `|"`. Furthermore, Multi-Line Strings will always append a linebreak.
+There are two ways in declaring a string, Single-Line and Multi-Line. A Single-Line String always starts and ends with `"` and has to be declared in one line. A Multi-Line String however can be declared in multiple lines and always starts with `|"` per line. Furthermore, Multi-Line Strings will always append a linebreak.
 
 Both string declarations allow [String Interpolations](#stringInterpolations).
 
@@ -393,7 +387,10 @@ Because of [string interpolations](#stringInterpolations) the `$` sign has to be
 
 // Multi-Line String
 |"Hello,
-|"RBO!
+|"
+|"this is paragraph 1
+|"
+|"and this paragraph 2.
 ```
 
 ### <a name="undefinedLiteral"></a>Undefined Literal
