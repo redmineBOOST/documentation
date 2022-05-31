@@ -403,17 +403,10 @@ undefined
 
 ## <a name="comments"></a> Comments
 
-RBO supports Multi-line and Single-line comments. The Comments are ignored when executing the process description.
+RBO supports Single-line comments. The Comments are ignored when executing the process description.
 
 Comments can be used to explain specific design decisions.
 
-A Multi-line comment is defined as follows:
-```
-/*
-This is a
-multi-line comment.
-*/
-```
 A Single-line comment is defined as follows:
 ```
 // This is a single-line comment.
