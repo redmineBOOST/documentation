@@ -317,7 +317,7 @@ The Restricted type can only be the value `restricted` and occures if the user o
 
 ### <a name="undefined"></a> Undefined
 
-The Undefined type can only be the value `undefined` and occures if the property is of type `Union<undefined|...>` and does not exist. The result is an `undefined` value.
+The Undefined type can only be the value `undefined`.
 
 ## <a name="literals"></a> Literals
 
