@@ -3,7 +3,7 @@ layout: documentation
 title: Reference
 id: reference
 ---
-# Language Reference (2022-05-06)
+# Language Reference (2022-06-13)
 
 The modifiers have the following meanings:
 
@@ -184,7 +184,7 @@ The user can navigate with the `UP` or `DOWN` arrows and to continue press the `
 
 #### Properties
 
-**`description:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description text which is shown when rendering the input
 
 **`options:`** `[`[`T`](#type-t)`]` (*required*)
@@ -213,13 +213,13 @@ A [DateInput](#type-dateinput) is an input item which renders a text input where
 
 #### Properties
 
-**`description:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description text which is shown when rendering the input
 
-**`format:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`format:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Format overrides locale, for details about valid formatting codes see [Standard Date and Time Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) or [Custom Date and time Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
 
-**`locale:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`locale:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : When no format or locale is given, the OS locale is used, culture names follow the standard defined by [BCP 47](https://www.rfc-editor.org/info/bcp47), for a list of predefined culture names see the **Language tag** column in the [list of language/region names](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c)
 
 **`value:`** [`date`](#type-date) (*readonly*)
@@ -242,19 +242,19 @@ A [LineInput](#type-lineinput) is an input item which renders a text input where
 
 #### Properties
 
-**`description:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description text which is shown when rendering the input
 
 **`echoMode:`** [`EchoMode`](#type-echomode)
 : Echo mode of the input, defaults to *[EchoMode](#type-echomode).Normal*
 
-**`maxLength:`** [`int32`](#type-int32) <code>&#124;</code> `undefined`
+**`maxLength:`** [`int32`](#type-int32)<code>&#124;</code>`undefined`
 : Maximum length of the input text
 
-**`minLength:`** [`int32`](#type-int32) <code>&#124;</code> `undefined`
+**`minLength:`** [`int32`](#type-int32)<code>&#124;</code>`undefined`
 : Minimum length of the input text
 
-**`pattern:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`pattern:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Validation pattern of the input text (see [Regular Expressions](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)), the `$` sign has to be **escaped** with the `` ` ``
 
 **`value:`** [`string`](#type-string) (*readonly*)
@@ -282,7 +282,7 @@ To select elements in a [MultiChoice](#type-multichoice) the user can press the 
 
 #### Properties
 
-**`description:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description text which is shown when rendering the input
 
 **`options:`** `[`[`T`](#type-t)`]` (*required*)
@@ -312,7 +312,7 @@ saved and the editor closed it will continue with the process execution.
 
 #### Properties
 
-**`description:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description text which is shown when rendering the input
 
 **`value:`** [`string`](#type-string) (*readonly*)
@@ -343,7 +343,7 @@ Attachments can be retrieved from an [Issue](#type-issue).
 **`author:`** [`User`](#type-user) (*readonly*)
 : [User](#type-user) which uploaded the [Attachment](#type-attachment)
 
-**`content_type:`** [`string`](#type-string) <code>&#124;</code> `undefined` (*readonly*)
+**`content_type:`** [`string`](#type-string)<code>&#124;</code>`undefined` (*readonly*)
 : MIME-Typ can be null if it is unknown
 
 **`content_url:`** [`string`](#type-string) (*readonly*)
@@ -352,7 +352,7 @@ Attachments can be retrieved from an [Issue](#type-issue).
 **`created_on:`** [`date`](#type-date) (*readonly*)
 : date when it was created
 
-**`description:`** [`string`](#type-string) <code>&#124;</code> `undefined` (*readonly*)
+**`description:`** [`string`](#type-string)<code>&#124;</code>`undefined` (*readonly*)
 : Description of the [Attachment](#type-attachment)
 
 **`filename:`** [`string`](#type-string) (*readonly*)
@@ -434,7 +434,7 @@ Other relations are [BlockedBy](#type-blockedby) and [RelatedTo](#type-relatedto
 **`issue:`** [`Issue`](#type-issue) (*required*)
 : [Issue](#type-issue) which precedes the containing issue
 
-**`delay:`** [`int32`](#type-int32) <code>&#124;</code> `undefined`
+**`delay:`** [`int32`](#type-int32)<code>&#124;</code>`undefined`
 : Delay in days
 
 
@@ -457,10 +457,10 @@ Creates a Redmine [Group](#type-group).
 **`memberships:`** `[`[`Membership`](#type-membership)`]` (*readonly*)
 : Memberships of the [Group](#type-group)
 
-**`name:`** [`string`](#type-string) (*required*)
+**`name:`** [`string`](#type-string) (*autouserinput, required*)
 : Name of the [Group](#ype-group)
 
-**`users:`** `[`[`User`](#type-user)`]` <code>&#124;</code> `restricted`
+**`users:`** `[`[`User`](#type-user)`]`<code>&#124;</code>`restricted`
 : Users of the [Group](#type-group)
 
 
@@ -486,7 +486,7 @@ Creates a Redmine [Issue](#type-issue).
 
 #### Properties
 
-**`assignedTo:`** [`Group`](#type-group) <code>&#124;</code> [`User`](#type-user) <code>&#124;</code> `undefined`
+**`assignedTo:`** [`Group`](#type-group)<code>&#124;</code>[`User`](#type-user)<code>&#124;</code>`undefined`
 : Assignee of the [Issue](#type-issue)
 
 **`attachments:`** `[`[`Attachment`](#type-attachment)`]` (*readonly*)
@@ -495,43 +495,43 @@ Creates a Redmine [Issue](#type-issue).
 **`author:`** [`User`](#type-user) (*readonly*)
 : Author of the [Issue](#type-issue)
 
-**`category:`** [`IssueCategory`](#type-issuecategory) <code>&#124;</code> `undefined`
+**`category:`** [`IssueCategory`](#type-issuecategory)<code>&#124;</code>`undefined`
 : Category of the [Issue](#type-issue)
 
 **`children:`** `[`[`Issue`](#type-issue)`]` (*readonly*)
 : Direct Child Issues of the [Issue](#type-issue)
 
-**`closedOn:`** [`date`](#type-date) <code>&#124;</code> `undefined` (*readonly*)
+**`closedOn:`** [`date`](#type-date)<code>&#124;</code>`undefined` (*readonly*)
 : Closed date of the [Issue](#type-issue)
 
 **`createdOn:`** [`date`](#type-date) (*readonly*)
 : Created date of the [Issue](#type-issue)
 
-**`description:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description of the [Issue](#type-issue)
 
 **`doneRatio:`** [`int32`](#type-int32)
 : Defaults to *zero*, only settable if no child issues exist
 
-**`dueDate:`** [`date`](#type-date) <code>&#124;</code> `undefined`
+**`dueDate:`** [`date`](#type-date)<code>&#124;</code>`undefined`
 : Only settable if no child issues exist
 
-**`estimatedHours:`** [`float32`](#type-float32) <code>&#124;</code> `undefined`
+**`estimatedHours:`** [`float32`](#type-float32)<code>&#124;</code>`undefined`
 : Estimated hours of the [Issue](#type-issue)
 
 **`isPrivate:`** [`bool`](#type-bool)
 : Private State of the [Issue](#type-issue)
 
-**`parent:`** [`Issue`](#type-issue) <code>&#124;</code> `undefined`
+**`parent:`** [`Issue`](#type-issue)<code>&#124;</code>`undefined`
 : Parent of the [Issue](#type-issue), is set automatically if the [Issue](#type-issue) is nested
 
 **`priority:`** [`IssuePriority`](#type-issuepriority)
 : Defaults to default priority, only settable if no child issues exist
 
-**`project:`** [`Project`](#type-project) (*required*)
+**`project:`** [`Project`](#type-project) (*autouserinput, required*)
 : [Project](#type-project) of the [Issue](#type-issue)
 
-**`relations:`** [`BlockedBy`](#type-blockedby) <code>&#124;</code> [`Follows`](#type-follows) <code>&#124;</code> [`RelatedTo`](#type-relatedto) (*readonly*)
+**`relations:`** [`BlockedBy`](#type-blockedby)<code>&#124;</code>[`Follows`](#type-follows)<code>&#124;</code>[`RelatedTo`](#type-relatedto) (*readonly*)
 : Relations of the [Issue](#type-issue)
 
 **`spentHours:`** [`float32`](#type-float32) (*readonly*)
@@ -543,16 +543,16 @@ Creates a Redmine [Issue](#type-issue).
 **`status:`** [`IssueStatus`](#type-issuestatus)
 : Defaults to default status in tracker
 
-**`subject:`** [`string`](#type-string) (*required*)
+**`subject:`** [`string`](#type-string) (*autouserinput, required*)
 : Subject of the [Issue](#type-issue)
 
-**`totalEstimatedHours:`** [`float32`](#type-float32) <code>&#124;</code> `undefined` (*readonly*)
+**`totalEstimatedHours:`** [`float32`](#type-float32)<code>&#124;</code>`undefined` (*readonly*)
 : Total estimated hours of the [Issue](#type-issue)
 
 **`totalSpentHours:`** [`float32`](#type-float32) (*readonly*)
 : Total spent hours of the [Issue](#type-issue), defaults to *zero*
 
-**`tracker:`** [`Tracker`](#type-tracker) (*required*)
+**`tracker:`** [`Tracker`](#type-tracker) (*autouserinput, required*)
 : [Tracker](#type-tracker) of the [Issue](#type-issue)
 
 **`updatedOn:`** [`date`](#type-date) (*readonly*)
@@ -575,7 +575,7 @@ Issue Categories can be retrieved from an [Project](#type-project).
 
 #### Properties
 
-**`name:`** [`string`](#type-string) (*required*)
+**`name:`** [`string`](#type-string)
 : Name of the [IssueCategory](#type-issuecategory)
 
 
@@ -601,7 +601,7 @@ Issue Priorities can be retrieved from queries e. g. with [GetIssuePriorities()]
 **`isDefault:`** [`bool`](#type-bool)
 : Is default state of the [IssuePriority](#type-issuepriority)
 
-**`name:`** [`string`](#type-string) (*required*)
+**`name:`** [`string`](#type-string)
 : Name of the [IssuePriority](#type-issuepriority)
 
 
@@ -626,7 +626,7 @@ Issue Statuses can be retrieved from queries e.g. with [GetIssueStatuses()](#typ
 **`isClosed:`** [`bool`](#type-bool)
 : Is closed state of the [IssueStatus](#type-issuestatus)
 
-**`name:`** [`string`](#type-string) (*required*)
+**`name:`** [`string`](#type-string)
 : Name of the [IssueStatus](#type-issuestatus)
 
 
@@ -648,13 +648,13 @@ Memberships can be retrieved from a [User](#type-user), [Group](#type-group) and
 
 #### Properties
 
-**`assignee:`** [`Group`](#type-group) <code>&#124;</code> [`User`](#type-user) (*required*)
+**`assignee:`** [`Group`](#type-group)<code>&#124;</code>[`User`](#type-user) (*autouserinput, required*)
 : Assignee of the [Membership](#type-membership)
 
-**`project:`** [`Project`](#type-project) (*required*)
+**`project:`** [`Project`](#type-project) (*autouserinput, required*)
 : [Project](#type-project) of the [Membership](#type-membership), is set automatically if the [Membership](#type-membership) is nested
 
-**`roles:`** `[`[`Role`](#type-role)`]` (*required*)
+**`roles:`** `[`[`Role`](#type-role)`]` (*autouserinput, required*)
 : Roles of the [Membership](#type-membership)
 
 
@@ -677,7 +677,7 @@ Appends a [Note](#type-note) to the containing [Issue](#type-issue).
 **`isPrivate:`** [`bool`](#type-bool)
 : Is private state of the [Note](#type-note)
 
-**`text:`** [`string`](#type-string) (*required*)
+**`text:`** [`string`](#type-string) (*autouserinput, required*)
 : Text of the [Note](#type-note)
 
 
@@ -707,10 +707,10 @@ Projects can be retrieved e.g. with queries like [GetProjects()](#type-getprojec
 **`customModules:`** `[`[`string`](#type-string)`]`
 : Custom modules of the [Project](#type-project)
 
-**`description:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description of the [Project](#type-project)
 
-**`identifier:`** [`string`](#type-string) (*required*)
+**`identifier:`** [`string`](#type-string) (*autouserinput, required*)
 : Identifier of the [Project](#type-project)
 
 **`inheritMembers:`** [`bool`](#type-bool)
@@ -725,10 +725,10 @@ Projects can be retrieved e.g. with queries like [GetProjects()](#type-getprojec
 **`memberships:`** `[`[`Membership`](#type-membership)`]` (*readonly*)
 : Memberships of the [Project](#type-project)
 
-**`name:`** [`string`](#type-string) (*required*)
+**`name:`** [`string`](#type-string) (*autouserinput, required*)
 : Name of the [Project](#type-project)
 
-**`parent:`** [`Project`](#type-project) <code>&#124;</code> `undefined`
+**`parent:`** [`Project`](#type-project)<code>&#124;</code>`undefined`
 : Parent of the [Project](#type-project), is set automatically if the [Project](#type-project) is nested
 
 **`standardModules:`** `[`[`ProjectModule`](#type-projectmodule)`]`
@@ -737,7 +737,7 @@ Projects can be retrieved e.g. with queries like [GetProjects()](#type-getprojec
 **`trackers:`** `[`[`Tracker`](#type-tracker)`]` (*readonly*)
 : [Tracker](#type-tracker) of the [Project](#type-project)
 
-**`updatedOn:`** [`date`](#type-date) <code>&#124;</code> `undefined` (*readonly*)
+**`updatedOn:`** [`date`](#type-date)<code>&#124;</code>`undefined` (*readonly*)
 : Update date of the [Project](#type-project)
 
 
@@ -860,7 +860,7 @@ Removes a set of isssue relations e.g. [BlockedBy](#type-blockedby), [Follows](#
 
 #### Properties
 
-**`relations:`** `[`[`BlockedBy`](#type-blockedby) <code>&#124;</code> [`Follows`](#type-follows) <code>&#124;</code> [`RelatedTo`](#type-relatedto)`]` (*required*)
+**`relations:`** `[`[`BlockedBy`](#type-blockedby)<code>&#124;</code>[`Follows`](#type-follows)<code>&#124;</code>[`RelatedTo`](#type-relatedto)`]` (*required*)
 : Relations which should be deleted
 
 
@@ -883,7 +883,7 @@ A [Role](#type-role) a [User](#type-user) can have on a [Project](#type-project)
 **`assignable:`** [`bool`](#type-bool)
 : Assignable state of the [Role](#type-role)
 
-**`name:`** [`string`](#type-string) (*required*)
+**`name:`** [`string`](#type-string)
 : Name of the [Role](#type-role)
 
 **`permissions:`** `[`[`Permission`](#type-permission)`]`
@@ -906,13 +906,13 @@ Represents a Redmine [Tracker](#type-tracker).
 
 #### Properties
 
-**`defaultStatus:`** [`IssueStatus`](#type-issuestatus) (*required*)
+**`defaultStatus:`** [`IssueStatus`](#type-issuestatus)
 : Default [IssueStatus](#type-issuestatus) of the [Tracker](#type-tracker)
 
 **`description:`** [`string`](#type-string)
 : Description of the [Tracker](#type-tracker)
 
-**`name:`** [`string`](#type-string) (*required*)
+**`name:`** [`string`](#type-string)
 : Name of the [Tracker](#type-tracker)
 
 
@@ -970,22 +970,22 @@ Updates an existing [Issue](#type-issue).
 
 #### Properties
 
-**`assignedTo:`** [`Group`](#type-group) <code>&#124;</code> [`User`](#type-user) <code>&#124;</code> `undefined`
+**`assignedTo:`** [`Group`](#type-group)<code>&#124;</code>[`User`](#type-user)<code>&#124;</code>`undefined`
 : Assignee of the [Issue](#type-issue)
 
-**`category:`** [`IssueCategory`](#type-issuecategory) <code>&#124;</code> `undefined`
+**`category:`** [`IssueCategory`](#type-issuecategory)<code>&#124;</code>`undefined`
 : Category of the [Issue](#type-issue)
 
-**`description:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description of the [Issue](#type-issue)
 
 **`doneRatio:`** [`int32`](#type-int32)
 : Defaults to *zero*, only settable if no child issues exist
 
-**`dueDate:`** [`date`](#type-date) <code>&#124;</code> `undefined`
+**`dueDate:`** [`date`](#type-date)<code>&#124;</code>`undefined`
 : Only settable if no child issues exist
 
-**`estimatedHours:`** [`float32`](#type-float32) <code>&#124;</code> `undefined`
+**`estimatedHours:`** [`float32`](#type-float32)<code>&#124;</code>`undefined`
 : Estimated hours of the [Issue](#type-issue)
 
 **`isPrivate:`** [`bool`](#type-bool)
@@ -994,7 +994,7 @@ Updates an existing [Issue](#type-issue).
 **`issue:`** [`Issue`](#type-issue) (*required*)
 : [Issue](#type-issue) to update
 
-**`parent:`** [`Issue`](#type-issue) <code>&#124;</code> `undefined`
+**`parent:`** [`Issue`](#type-issue)<code>&#124;</code>`undefined`
 : Parent of the [Issue](#type-issue)
 
 **`priority:`** [`IssuePriority`](#type-issuepriority)
@@ -1072,7 +1072,7 @@ Updates an existing [Project](#type-project).
 **`customModules:`** `[`[`string`](#type-string)`]`
 : Custom modules of the [Project](#type-project), can not be set if 'addCustomModules' or 'removeCustomModules' is set
 
-**`description:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description of the [Project](#type-project)
 
 **`inheritMembers:`** [`bool`](#type-bool)
@@ -1084,7 +1084,7 @@ Updates an existing [Project](#type-project).
 **`name:`** [`string`](#type-string)
 : Name of the [Project](#type-project)
 
-**`parent:`** [`Project`](#type-project) <code>&#124;</code> `undefined`
+**`parent:`** [`Project`](#type-project)<code>&#124;</code>`undefined`
 : Parent of the [Project](#type-project)
 
 **`project:`** [`Project`](#type-project) (*required*)
@@ -1155,10 +1155,10 @@ Appends an [Attachment](#type-attachment) to an [Issue](#type-issue).
 
 #### Properties
 
-**`description:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description of the [Upload](#type-upload)
 
-**`path:`** [`string`](#type-string) (*required*)
+**`path:`** [`string`](#type-string) (*autouserinput, required*)
 : Filepath of the File to be uploaded
 
 
@@ -1179,37 +1179,37 @@ Creates a Redmine [User](#type-user).
 
 #### Properties
 
-**`apiKey:`** [`string`](#type-string) <code>&#124;</code> `restricted` (*readonly*)
+**`apiKey:`** [`string`](#type-string)<code>&#124;</code>`restricted` (*readonly*)
 : ApiKey of the [User](#type-user). Available when Identity user is an admin or the user.
 
 **`createdOn:`** [`date`](#type-date) (*readonly*)
 : Created date of the [User](#type-user)
 
-**`firstname:`** [`string`](#type-string) (*required*)
+**`firstname:`** [`string`](#type-string) (*autouserinput, required*)
 : Firstname of the [User](#type-user)
 
-**`groups:`** `[`[`Group`](#type-group)`]` <code>&#124;</code> `restricted` (*readonly*)
+**`groups:`** `[`[`Group`](#type-group)`]`<code>&#124;</code>`restricted` (*readonly*)
 : Groups of the [User](#type-user). Available when Identity user is an admin.
 
-**`isAdmin:`** [`bool`](#type-bool) <code>&#124;</code> `restricted`
+**`isAdmin:`** [`bool`](#type-bool)<code>&#124;</code>`restricted`
 : Is admin state of the [User](#type-user). Available when Identity user is an admin or the user.
 
-**`lastLoginOn:`** [`date`](#type-date) <code>&#124;</code> `undefined` (*readonly*)
+**`lastLoginOn:`** [`date`](#type-date)<code>&#124;</code>`undefined` (*readonly*)
 : Last login on date of the [User](#type-user)
 
-**`lastname:`** [`string`](#type-string) (*required*)
+**`lastname:`** [`string`](#type-string) (*autouserinput, required*)
 : Lastname of the [User](#user)
 
-**`login:`** [`string`](#type-string) (*required*)
+**`login:`** [`string`](#type-string) (*autouserinput, required*)
 : Login of the [User](#type-user)
 
-**`mail:`** [`string`](#type-string) <code>&#124;</code> `restricted` (*required*)
+**`mail:`** [`string`](#type-string)<code>&#124;</code>`restricted` (*autouserinput, required*)
 : Mail of the [User](#type-user). Available when Identity user is an admin or the user.
 
 **`memberships:`** `[`[`Membership`](#type-membership)`]` (*readonly*)
 : Memberships of the [User](#type-user)
 
-**`status:`** [`UserStatus`](#type-userstatus) <code>&#124;</code> `restricted`
+**`status:`** [`UserStatus`](#type-userstatus)<code>&#124;</code>`restricted`
 : Current [UserStatus](#type-userstatus)
 
 
@@ -1223,7 +1223,9 @@ Returns the local system date.
 
 **Requires Admin:** no
 
-`GetCurrentDateTime()`
+```
+GetCurrentDateTime()
+```
 
 **Return type:** [`date`](#type-date)
 ### <a name='type-getcurrentuser'></a> GetCurrentUser
@@ -1232,7 +1234,9 @@ Retrieving the [User](#type-user) whose credentials are used to access the [REST
 
 **Requires Admin:** no
 
-`GetCurrentUser()`
+```
+GetCurrentUser()
+```
 
 **Return type:** [`User`](#type-user)
 ### <a name='type-getgroup'></a> GetGroup
@@ -1241,14 +1245,18 @@ Returns a single [Group](#type-group).
 
 **Requires Admin:** yes
 
-`GetGroup(id: int32)`
+```
+GetGroup (id: int32)
+```
 
 #### Parameters
 **`id:`** [`int32`](#type-int32)
 : Redmine id of group to return
 
 
-`GetGroup(name: string)`
+```
+GetGroup (name: string)
+```
 
 #### Parameters
 **`name:`** [`string`](#type-string)
@@ -1262,7 +1270,9 @@ Returns an array of [Groups](#type-group).
 
 **Requires Admin:** yes
 
-`GetGroups()`
+```
+GetGroups()
+```
 
 **Return type:** `[`[`Group`](#type-group)`]`
 ### <a name='type-getissue'></a> GetIssue
@@ -1271,7 +1281,9 @@ Returns a single [Issue](#type-issue).
 
 **Requires Admin:** no
 
-`GetIssue(id: int32)`
+```
+GetIssue (id: int32)
+```
 
 #### Parameters
 **`id:`** [`int32`](#type-int32)
@@ -1285,7 +1297,9 @@ Returns a single [IssueCategory](#type-issuecategory).
 
 **Requires Admin:** no
 
-`GetIssueCategory(id: int32)`
+```
+GetIssueCategory (id: int32)
+```
 
 #### Parameters
 **`id:`** [`int32`](#type-int32)
@@ -1299,7 +1313,9 @@ Returns an array of [Issue Priorities](#type-issuepriority).
 
 **Requires Admin:** no
 
-`GetIssuePriorities(includeInactive: bool)`
+```
+GetIssuePriorities (includeInactive: bool)
+```
 
 #### Parameters
 **`includeInactive:`** [`bool`](#type-bool) since Redmine 4.1.0
@@ -1313,14 +1329,18 @@ Returns a single [IssuePriority](#type-issuepriority).
 
 **Requires Admin:** no
 
-`GetIssuePriority(id: int32)`
+```
+GetIssuePriority (id: int32)
+```
 
 #### Parameters
 **`id:`** [`int32`](#type-int32)
 : Redmine id of issue priority to return
 
 
-`GetIssuePriority(name: string)`
+```
+GetIssuePriority (name: string)
+```
 
 #### Parameters
 **`name:`** [`string`](#type-string)
@@ -1334,19 +1354,21 @@ Returns an array of [Issues](#type-issue) filtered by the specified parameters.
 
 **Requires Admin:** no
 
-`GetIssues(assignedTo: Group|User|undefined, project: Project|undefined, status: IssueStatus|IssueStatusFilter|undefined, tracker: Tracker|undefined)`
+```
+GetIssues (assignedTo: Group|User|undefined, project: Project|undefined, status: IssueStatus|IssueStatusFilter|undefined, tracker: Tracker|undefined)
+```
 
 #### Parameters
-**`assignedTo:`** [`Group`](#type-group) <code>&#124;</code> [`User`](#type-user) <code>&#124;</code> `undefined`
+**`assignedTo:`** [`Group`](#type-group)<code>&#124;</code>[`User`](#type-user)<code>&#124;</code>`undefined`
 : Assigned group or user of the issue, defaults to `undefined`
 
-**`project:`** [`Project`](#type-project) <code>&#124;</code> `undefined`
+**`project:`** [`Project`](#type-project)<code>&#124;</code>`undefined`
 : Project of the issue, defaults to `undefined`
 
-**`status:`** [`IssueStatus`](#type-issuestatus) <code>&#124;</code> [`IssueStatusFilter`](#type-issuestatusfilter) <code>&#124;</code> `undefined`
+**`status:`** [`IssueStatus`](#type-issuestatus)<code>&#124;</code>[`IssueStatusFilter`](#type-issuestatusfilter)<code>&#124;</code>`undefined`
 : Issue status or status filter of the issue, defaults to `undefined`
 
-**`tracker:`** [`Tracker`](#type-tracker) <code>&#124;</code> `undefined`
+**`tracker:`** [`Tracker`](#type-tracker)<code>&#124;</code>`undefined`
 : Tracker of the issue, defaults to `undefined`
 
 
@@ -1357,14 +1379,18 @@ Returns a single [IssueStatus](#type-issuestatus).
 
 **Requires Admin:** no
 
-`GetIssueStatus(id: int32)`
+```
+GetIssueStatus (id: int32)
+```
 
 #### Parameters
 **`id:`** [`int32`](#type-int32)
 : Redmine id of issue status to return
 
 
-`GetIssueStatus(name: string)`
+```
+GetIssueStatus (name: string)
+```
 
 #### Parameters
 **`name:`** [`string`](#type-string)
@@ -1378,7 +1404,9 @@ Returns an array of [Issue Statuses](#type-issuestatus).
 
 **Requires Admin:** no
 
-`GetIssueStatuses()`
+```
+GetIssueStatuses()
+```
 
 **Return type:** `[`[`IssueStatus`](#type-issuestatus)`]`
 ### <a name='type-getproject'></a> GetProject
@@ -1387,7 +1415,9 @@ Returns a single [Project](#type-project).
 
 **Requires Admin:** no
 
-`GetProject(identifier: string)`
+```
+GetProject (identifier: string)
+```
 
 #### Parameters
 **`identifier:`** [`string`](#type-string)
@@ -1401,7 +1431,9 @@ Returns a single [Group](#type-group) in a [Project](#type-project).
 
 **Requires Admin:** no
 
-`GetProjectGroup(id: int32, project: Project)`
+```
+GetProjectGroup (id: int32, project: Project)
+```
 
 #### Parameters
 **`id:`** [`int32`](#type-int32)
@@ -1411,7 +1443,9 @@ Returns a single [Group](#type-group) in a [Project](#type-project).
 : Project from which the group is retrieved
 
 
-`GetProjectGroup(name: string, project: Project)`
+```
+GetProjectGroup (name: string, project: Project)
+```
 
 #### Parameters
 **`name:`** [`string`](#type-string)
@@ -1428,7 +1462,9 @@ Returns an array of [Groups](#type-group) of a [Project](#type-project).
 
 **Requires Admin:** no
 
-`GetProjectGroups(project: Project)`
+```
+GetProjectGroups (project: Project)
+```
 
 #### Parameters
 **`project:`** [`Project`](#type-project)
@@ -1442,7 +1478,9 @@ Returns an array of [IssueCategories](#type-issuecategory) of a [Project](#type-
 
 **Requires Admin:** no
 
-`GetProjectIssueCategories(project: Project)`
+```
+GetProjectIssueCategories (project: Project)
+```
 
 #### Parameters
 **`project:`** [`Project`](#type-project)
@@ -1456,7 +1494,9 @@ Returns a single [IssueCategory](#type-issuecategory) in a [Project](#type-proje
 
 **Requires Admin:** no
 
-`GetProjectIssueCategory(name: string, project: Project)`
+```
+GetProjectIssueCategory (name: string, project: Project)
+```
 
 #### Parameters
 **`name:`** [`string`](#type-string)
@@ -1473,7 +1513,9 @@ Returns a single [Membership](#type-membership) in a [Project](#type-project).
 
 **Requires Admin:** no
 
-`GetProjectMembership(group: Group, project: Project)`
+```
+GetProjectMembership (group: Group, project: Project)
+```
 
 #### Parameters
 **`group:`** [`Group`](#type-group)
@@ -1483,7 +1525,9 @@ Returns a single [Membership](#type-membership) in a [Project](#type-project).
 : [Project](#type-project) from which the memberships are retrieved
 
 
-`GetProjectMembership(project: Project, user: User)`
+```
+GetProjectMembership (project: Project, user: User)
+```
 
 #### Parameters
 **`project:`** [`Project`](#type-project)
@@ -1500,7 +1544,9 @@ Returns an array of [Projects](#type-project).
 
 **Requires Admin:** no
 
-`GetProjects()`
+```
+GetProjects()
+```
 
 **Return type:** `[`[`Project`](#type-project)`]`
 ### <a name='type-getprojectuser'></a> GetProjectUser
@@ -1509,7 +1555,9 @@ Returns a single [User](#type-user) in a [Project](#type-project).
 
 **Requires Admin:** no
 
-`GetProjectUser(login: string, project: Project)`
+```
+GetProjectUser (login: string, project: Project)
+```
 
 #### Parameters
 **`project:`** [`Project`](#type-project)
@@ -1526,7 +1574,9 @@ Returns an array of [Users](#type-user) of a [Project](#type-project).
 
 **Requires Admin:** no
 
-`GetProjectUsers(project: Project)`
+```
+GetProjectUsers (project: Project)
+```
 
 #### Parameters
 **`project:`** [`Project`](#type-project)
@@ -1540,14 +1590,18 @@ Returns a single [Role](#type-role).
 
 **Requires Admin:** no
 
-`GetRole(id: int32)`
+```
+GetRole (id: int32)
+```
 
 #### Parameters
 **`id:`** [`int32`](#type-int32)
 : Redmine id of role to return
 
 
-`GetRole(name: string)`
+```
+GetRole (name: string)
+```
 
 #### Parameters
 **`name:`** [`string`](#type-string)
@@ -1561,7 +1615,9 @@ Returns an array of [Roles](#type-role).
 
 **Requires Admin:** no
 
-`GetRoles()`
+```
+GetRoles()
+```
 
 **Return type:** `[`[`Role`](#type-role)`]`
 ### <a name='type-gettracker'></a> GetTracker
@@ -1570,14 +1626,18 @@ Returns a single [Tracker](#type-tracker).
 
 **Requires Admin:** no
 
-`GetTracker(id: int32)`
+```
+GetTracker (id: int32)
+```
 
 #### Parameters
 **`id:`** [`int32`](#type-int32)
 : Redmine id of tracker to return
 
 
-`GetTracker(name: string)`
+```
+GetTracker (name: string)
+```
 
 #### Parameters
 **`name:`** [`string`](#type-string)
@@ -1591,7 +1651,9 @@ Returns an array of [Tracker](#type-tracker).
 
 **Requires Admin:** no
 
-`GetTrackers()`
+```
+GetTrackers()
+```
 
 **Return type:** `[`[`Tracker`](#type-tracker)`]`
 ### <a name='type-getuser'></a> GetUser
@@ -1600,14 +1662,18 @@ Returns a single [User](#type-user).
 
 **Requires Admin:** no
 
-`GetUser(id: int32)`
+```
+GetUser (id: int32)
+```
 
 #### Parameters
 **`id:`** [`int32`](#type-int32)
 : Redmine id of user to return
 
 
-`GetUser(login: string)`
+```
+GetUser (login: string)
+```
 
 #### Parameters
 **`login:`** [`string`](#type-string) (requiresadmin)
@@ -1621,16 +1687,18 @@ Returns an array of [Users](#type-user) filtered by the specified parameters.
 
 **Requires Admin:** yes
 
-`GetUsers(group: Group|undefined, name: string|undefined, userStatus: undefined|UserStatus)`
+```
+GetUsers (group: Group|undefined, name: string|undefined, userStatus: undefined|UserStatus)
+```
 
 #### Parameters
-**`group:`** [`Group`](#type-group) <code>&#124;</code> `undefined`
+**`group:`** [`Group`](#type-group)<code>&#124;</code>`undefined`
 : Group of the user, defaults to `undefined`
 
-**`name:`** [`string`](#type-string) <code>&#124;</code> `undefined`
+**`name:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Name of the user, defaults to `undefined`
 
-**`userStatus:`** [`UserStatus`](#type-userstatus) <code>&#124;</code> `undefined`
+**`userStatus:`** [`UserStatus`](#type-userstatus)<code>&#124;</code>`undefined`
 : User Status of the user, defaults to `undefined`
 
 
