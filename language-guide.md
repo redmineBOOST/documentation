@@ -317,7 +317,7 @@ The Restricted type can only be the value `restricted` and occures if the user o
 
 ### <a name="undefined"></a> Undefined
 
-The Undefined type can only be the value `undefined` and occures if the property is of type `Union<undefined|...>` and does not exist. The result is an `undefined` value.
+The Undefined type can only be the value `undefined`.
 
 ## <a name="literals"></a> Literals
 
@@ -403,17 +403,10 @@ undefined
 
 ## <a name="comments"></a> Comments
 
-RBO supports Multi-line and Single-line comments. The Comments are ignored when executing the process description.
+RBO supports Single-line comments. The Comments are ignored when executing the process description.
 
 Comments can be used to explain specific design decisions.
 
-A Multi-line comment is defined as follows:
-```
-/*
-This is a
-multi-line comment.
-*/
-```
 A Single-line comment is defined as follows:
 ```
 // This is a single-line comment.
