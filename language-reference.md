@@ -3,7 +3,7 @@ layout: documentation
 title: Reference
 id: reference
 ---
-# Language Reference (2022-06-13)
+# Language Reference (2022-06-14)
 
 The modifiers have the following meanings:
 
@@ -457,7 +457,7 @@ Creates a Redmine [Group](#type-group).
 **`memberships:`** `[`[`Membership`](#type-membership)`]` (*readonly*)
 : Memberships of the [Group](#type-group)
 
-**`name:`** [`string`](#type-string) (*autouserinput, required*)
+**`name:`** [`string`](#type-string) (*autouserinput*, *required*)
 : Name of the [Group](#ype-group)
 
 **`users:`** `[`[`User`](#type-user)`]`<code>&#124;</code>`restricted`
@@ -528,7 +528,7 @@ Creates a Redmine [Issue](#type-issue).
 **`priority:`** [`IssuePriority`](#type-issuepriority)
 : Defaults to default priority, only settable if no child issues exist
 
-**`project:`** [`Project`](#type-project) (*autouserinput, required*)
+**`project:`** [`Project`](#type-project) (*autouserinput*, *required*)
 : [Project](#type-project) of the [Issue](#type-issue)
 
 **`relations:`** [`BlockedBy`](#type-blockedby)<code>&#124;</code>[`Follows`](#type-follows)<code>&#124;</code>[`RelatedTo`](#type-relatedto) (*readonly*)
@@ -543,7 +543,7 @@ Creates a Redmine [Issue](#type-issue).
 **`status:`** [`IssueStatus`](#type-issuestatus)
 : Defaults to default status in tracker
 
-**`subject:`** [`string`](#type-string) (*autouserinput, required*)
+**`subject:`** [`string`](#type-string) (*autouserinput*, *required*)
 : Subject of the [Issue](#type-issue)
 
 **`totalEstimatedHours:`** [`float32`](#type-float32)<code>&#124;</code>`undefined` (*readonly*)
@@ -552,7 +552,7 @@ Creates a Redmine [Issue](#type-issue).
 **`totalSpentHours:`** [`float32`](#type-float32) (*readonly*)
 : Total spent hours of the [Issue](#type-issue), defaults to *zero*
 
-**`tracker:`** [`Tracker`](#type-tracker) (*autouserinput, required*)
+**`tracker:`** [`Tracker`](#type-tracker) (*autouserinput*, *required*)
 : [Tracker](#type-tracker) of the [Issue](#type-issue)
 
 **`updatedOn:`** [`date`](#type-date) (*readonly*)
@@ -648,13 +648,13 @@ Memberships can be retrieved from a [User](#type-user), [Group](#type-group) and
 
 #### Properties
 
-**`assignee:`** [`Group`](#type-group)<code>&#124;</code>[`User`](#type-user) (*autouserinput, required*)
+**`assignee:`** [`Group`](#type-group)<code>&#124;</code>[`User`](#type-user) (*autouserinput*, *required*)
 : Assignee of the [Membership](#type-membership)
 
-**`project:`** [`Project`](#type-project) (*autouserinput, required*)
+**`project:`** [`Project`](#type-project) (*autouserinput*, *required*)
 : [Project](#type-project) of the [Membership](#type-membership), is set automatically if the [Membership](#type-membership) is nested
 
-**`roles:`** `[`[`Role`](#type-role)`]` (*autouserinput, required*)
+**`roles:`** `[`[`Role`](#type-role)`]` (*autouserinput*, *required*)
 : Roles of the [Membership](#type-membership)
 
 
@@ -677,7 +677,7 @@ Appends a [Note](#type-note) to the containing [Issue](#type-issue).
 **`isPrivate:`** [`bool`](#type-bool)
 : Is private state of the [Note](#type-note)
 
-**`text:`** [`string`](#type-string) (*autouserinput, required*)
+**`text:`** [`string`](#type-string) (*autouserinput*, *required*)
 : Text of the [Note](#type-note)
 
 
@@ -710,7 +710,7 @@ Projects can be retrieved e.g. with queries like [GetProjects()](#type-getprojec
 **`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description of the [Project](#type-project)
 
-**`identifier:`** [`string`](#type-string) (*autouserinput, required*)
+**`identifier:`** [`string`](#type-string) (*autouserinput*, *required*)
 : Identifier of the [Project](#type-project)
 
 **`inheritMembers:`** [`bool`](#type-bool)
@@ -725,7 +725,7 @@ Projects can be retrieved e.g. with queries like [GetProjects()](#type-getprojec
 **`memberships:`** `[`[`Membership`](#type-membership)`]` (*readonly*)
 : Memberships of the [Project](#type-project)
 
-**`name:`** [`string`](#type-string) (*autouserinput, required*)
+**`name:`** [`string`](#type-string) (*autouserinput*, *required*)
 : Name of the [Project](#type-project)
 
 **`parent:`** [`Project`](#type-project)<code>&#124;</code>`undefined`
@@ -1158,7 +1158,7 @@ Appends an [Attachment](#type-attachment) to an [Issue](#type-issue).
 **`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description of the [Upload](#type-upload)
 
-**`path:`** [`string`](#type-string) (*autouserinput, required*)
+**`path:`** [`string`](#type-string) (*autouserinput*, *required*)
 : Filepath of the File to be uploaded
 
 
@@ -1185,7 +1185,7 @@ Creates a Redmine [User](#type-user).
 **`createdOn:`** [`date`](#type-date) (*readonly*)
 : Created date of the [User](#type-user)
 
-**`firstname:`** [`string`](#type-string) (*autouserinput, required*)
+**`firstname:`** [`string`](#type-string) (*autouserinput*, *required*)
 : Firstname of the [User](#type-user)
 
 **`groups:`** `[`[`Group`](#type-group)`]`<code>&#124;</code>`restricted` (*readonly*)
@@ -1197,13 +1197,13 @@ Creates a Redmine [User](#type-user).
 **`lastLoginOn:`** [`date`](#type-date)<code>&#124;</code>`undefined` (*readonly*)
 : Last login on date of the [User](#type-user)
 
-**`lastname:`** [`string`](#type-string) (*autouserinput, required*)
+**`lastname:`** [`string`](#type-string) (*autouserinput*, *required*)
 : Lastname of the [User](#user)
 
-**`login:`** [`string`](#type-string) (*autouserinput, required*)
+**`login:`** [`string`](#type-string) (*autouserinput*, *required*)
 : Login of the [User](#type-user)
 
-**`mail:`** [`string`](#type-string)<code>&#124;</code>`restricted` (*autouserinput, required*)
+**`mail:`** [`string`](#type-string)<code>&#124;</code>`restricted` (*autouserinput*, *required*)
 : Mail of the [User](#type-user). Available when Identity user is an admin or the user.
 
 **`memberships:`** `[`[`Membership`](#type-membership)`]` (*readonly*)
