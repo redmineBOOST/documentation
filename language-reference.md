@@ -3,7 +3,7 @@ layout: documentation
 title: Reference
 id: reference
 ---
-# Language Reference (2022-06-14)
+# Language Reference (2022-06-21)
 
 The modifiers have the following meanings:
 
@@ -378,14 +378,11 @@ The [Authentication](#type-authentication) item contains all password related op
 
 #### Properties
 
-**`generatePassword:`** [`bool`](#type-bool)
-: Either `generatePassword` or `password` must be set. If defined, `password` can not be defined
-
 **`mustChangePassword:`** [`bool`](#type-bool)
 : [User](#type-user) has to change the password after login
 
-**`password:`** [`string`](#type-string)
-: Either `generatePassword` or `password` must be set. If defined, `generatePassword` can not be defined
+**`password:`** [`string`](#type-string)<code>&#124;</code>`undefined` (*required*)
+: Password to set for the user. When undefined a password is generated.
 
 **`sendInformation:`** [`bool`](#type-bool)
 : Send acocunt information to the user via mail
@@ -510,7 +507,7 @@ Creates a Redmine [Issue](#type-issue).
 **`description:`** [`string`](#type-string)<code>&#124;</code>`undefined`
 : Description of the [Issue](#type-issue)
 
-**`doneRatio:`** [`int32`](#type-int32)
+**`doneRatio:`** [`int32`](#type-int32)<code>&#124;</code>`undefined`
 : Defaults to *zero*, only settable if no child issues exist
 
 **`dueDate:`** [`date`](#type-date)<code>&#124;</code>`undefined`
@@ -537,7 +534,7 @@ Creates a Redmine [Issue](#type-issue).
 **`spentHours:`** [`float32`](#type-float32) (*readonly*)
 : Spent hours of the [Issue](#type-issue)
 
-**`startDate:`** [`date`](#type-date)
+**`startDate:`** [`date`](#type-date)<code>&#124;</code>`undefined`
 : Only settable if no child issues exist
 
 **`status:`** [`IssueStatus`](#type-issuestatus)
