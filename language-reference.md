@@ -3,7 +3,7 @@ layout: documentation
 title: Reference
 id: reference
 ---
-# Language Reference (2022-06-21)
+# Language Reference (2022-08-18)
 
 The modifiers have the following meanings:
 
@@ -393,7 +393,7 @@ The [Authentication](#type-authentication) item contains all password related op
 
 Creates a [BlockedBy](#type-blockedby) issue relation.
 The [BlockedBy](#type-blockedby) item is an issue relation where the containing issue is blocked by the issue specified in the property.
-Other relations are [Follows](#type-follows) and [RelatedTo](#type-relatedto).
+Other relations are [CopiedFrom](#type-copiedfrom), [Follows](#type-follows), [IsDuplicateOf](#type-isduplicateof) and [RelatedTo](#type-relatedto).
 
 **Instantiable:** yes
 
@@ -410,12 +410,34 @@ Other relations are [Follows](#type-follows) and [RelatedTo](#type-relatedto).
 : [Issue](#type-issue) which blocks the containing issue
 
 
+### <a name='type-copiedfrom'></a> CopiedFrom
+
+
+Creates a [CopiedFrom](#type-copiedfrom) issue relation.
+The [CopiedFrom](#type-copiedfrom) item is an issue relation where the containing issue is copied from the issue specified in the property.
+Other relations are [BlockedBy](#type-blockedby), [Follows](#type-follows), [IsDuplicateOf](#type-isduplicateof) and [RelatedTo](#type-relatedto).
+
+**Instantiable:** yes
+
+**Permitted child items:**
+* [`Choice`](#type-choice)
+* [`DateInput`](#type-dateinput)
+* [`LineInput`](#type-lineinput)
+* [`MultiChoice`](#type-multichoice)
+* [`TextInput`](#type-textinput)
+
+#### Properties
+
+**`issue:`** [`Issue`](#type-issue) (*required*)
+: [Issue](#type-issue) which is the source of the containing issue
+
+
 ### <a name='type-follows'></a> Follows
 
 
 Creates a [Follows](#type-follows) issue relation.
 The [Follows](#type-follows) item is an issue relation where the containing issue is following the issue specified in the property.
-Other relations are [BlockedBy](#type-blockedby) and [RelatedTo](#type-relatedto).
+Other relations are [BlockedBy](#type-blockedby), [CopiedFrom](#type-copiedfrom), [IsDuplicateOf](#type-isduplicateof) and [RelatedTo](#type-relatedto).
 
 **Instantiable:** yes
 
@@ -461,6 +483,28 @@ Creates a Redmine [Group](#type-group).
 : Users of the [Group](#type-group)
 
 
+### <a name='type-isduplicateof'></a> IsDuplicateOf
+
+
+Creates a [IsDuplicateOf](#type-isduplicateof) issue relation.
+The [IsDuplicateOf](#type-isduplicateof) item is an issue relation where the containing issue is a duplicate of the issue specified in the property.
+Other relations are [BlockedBy](#type-blockedby), [CopiedFrom](#type-copiedfrom), [Follows](#type-follows) and [RelatedTo](#type-relatedto).
+
+**Instantiable:** yes
+
+**Permitted child items:**
+* [`Choice`](#type-choice)
+* [`DateInput`](#type-dateinput)
+* [`LineInput`](#type-lineinput)
+* [`MultiChoice`](#type-multichoice)
+* [`TextInput`](#type-textinput)
+
+#### Properties
+
+**`issue:`** [`Issue`](#type-issue) (*required*)
+: [Issue](#type-issue) which is a duplicate of the containing issue
+
+
 ### <a name='type-issue'></a> Issue
 
 
@@ -475,7 +519,9 @@ Creates a Redmine [Issue](#type-issue).
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 * [`BlockedBy`](#type-blockedby)
+* [`CopiedFrom`](#type-copiedfrom)
 * [`Follows`](#type-follows)
+* [`IsDuplicateOf`](#type-isduplicateof)
 * [`Issue`](#type-issue)
 * [`Note`](#type-note)
 * [`RelatedTo`](#type-relatedto)
@@ -528,7 +574,7 @@ Creates a Redmine [Issue](#type-issue).
 **`project:`** [`Project`](#type-project) (*autouserinput*, *required*)
 : [Project](#type-project) of the [Issue](#type-issue)
 
-**`relations:`** [`BlockedBy`](#type-blockedby)<code>&#124;</code>[`Follows`](#type-follows)<code>&#124;</code>[`RelatedTo`](#type-relatedto) (*readonly*)
+**`relations:`** `[`[`BlockedBy`](#type-blockedby)<code>&#124;</code>[`CopiedFrom`](#type-copiedfrom)<code>&#124;</code>[`Follows`](#type-follows)<code>&#124;</code>[`IsDuplicateOf`](#type-isduplicateof)<code>&#124;</code>[`RelatedTo`](#type-relatedto)`]` (*readonly*)
 : Relations of the [Issue](#type-issue)
 
 **`spentHours:`** [`float32`](#type-float32) (*readonly*)
@@ -742,7 +788,7 @@ Projects can be retrieved e.g. with queries like [GetProjects()](#type-getprojec
 
 
 The [RelatedTo](#type-relatedto) item is an issue relation where the containing issue is related to the issue specified in the property.
-Other relations are [BlockedBy](#type-blockedby) and [Follows](#type-follows).
+Other relations are [BlockedBy](#type-blockedby), [CopiedFrom](#type-copiedfrom), [Follows](#type-follows) and [IsDuplicateOf](#type-isduplicateof).
 
 **Instantiable:** yes
 
@@ -844,7 +890,7 @@ Remove [Projects](#type-project)
 ### <a name='type-removerelations'></a> RemoveRelations
 
 
-Removes a set of isssue relations e.g. [BlockedBy](#type-blockedby), [Follows](#type-follows) or [RelatedTo](#type-relatedto).
+Removes a set of isssue relations e.g. [BlockedBy](#type-blockedby), [CopiedTo](#type-copiedto), [Follows](#type-follows), [HasDuplicate](#type-hasduplicate) or [RelatedTo](#type-relatedto).
 
 **Instantiable:** yes
 
@@ -857,7 +903,7 @@ Removes a set of isssue relations e.g. [BlockedBy](#type-blockedby), [Follows](#
 
 #### Properties
 
-**`relations:`** `[`[`BlockedBy`](#type-blockedby)<code>&#124;</code>[`Follows`](#type-follows)<code>&#124;</code>[`RelatedTo`](#type-relatedto)`]` (*required*)
+**`relations:`** `[`[`BlockedBy`](#type-blockedby)<code>&#124;</code>[`CopiedFrom`](#type-copiedfrom)<code>&#124;</code>[`Follows`](#type-follows)<code>&#124;</code>[`IsDuplicateOf`](#type-isduplicateof)<code>&#124;</code>[`RelatedTo`](#type-relatedto)`]` (*required*)
 : Relations which should be deleted
 
 
@@ -959,7 +1005,9 @@ Updates an existing [Issue](#type-issue).
 * [`MultiChoice`](#type-multichoice)
 * [`TextInput`](#type-textinput)
 * [`BlockedBy`](#type-blockedby)
+* [`CopiedFrom`](#type-copiedfrom)
 * [`Follows`](#type-follows)
+* [`IsDuplicateOf`](#type-isduplicateof)
 * [`Issue`](#type-issue)
 * [`Note`](#type-note)
 * [`RelatedTo`](#type-relatedto)
