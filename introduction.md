@@ -7,7 +7,7 @@ id: introduction
 
 **redmineBOOST** is a productivity increasing command line tool in daily work with Redmine.
 
-Describe repetitive tasks in a domain-specific language within a **redmineBOOST** Process Description. Tasks such as creating or updating a Redmine issue are mapped as work items. Items can be instantiated, which results in executing the specific task e. g. `UpdateIssue{...}`, or read from Redmine by Queries e. g. `GetIssue(id=12)`. Items can be nested to express hierarchies, dependencies and relationships.
+Describe repetitive tasks in a domain-specific language within a **redmineBOOST** Process Description. Tasks such as creating or updating a Redmine issue are mapped as work items. Items can be instantiated, which results in executing the specific task e. g. `UpdateIssue{...}`, or read from Redmine by Queries e. g. `GetIssue(id: 12)`. Items can be nested to express hierarchies, dependencies and relationships.
 
 By creating the right Process Descriptions you can map business processes to complex Redmine issue structures in corporate specification, support standardized issue creation, provision new projects with default data, automate file uploads, manage user accounts and much more. Process Description files have the file extension `rbo` e. g. `create-issue.rbo`.
 
@@ -27,13 +27,13 @@ This is an example of a simple Process Description to create a Redmine issue in 
 // Item to create a Redmine issue
 Issue {
     // Set required project Property by quering the right project
-    project: GetProject(identifier="AwesomeNewProject")
-    
+    project: GetProject(identifier: "AwesomeNewProject");
+
     // Set required tracker Property
-    tracker: GetTracker(name="Feature")
-    
+    tracker: GetTracker(name: "Feature");
+
     // Set a subject
-    subject: "Awesome New Feature"
+    subject: "Awesome New Feature";
 }
 ```
 
@@ -156,7 +156,7 @@ Label: _
 URL:
 Api key:
 Allow Issue Assignment To Groups: [ ]
-Maximum Attachment Size KB (default = 5120): 
+Maximum Attachment Size KB (default = 5120):
 ```
 
 A Redmine identity consists of a user defined Label, a Redmine provided API key, a Redmine URL, a flag indicating whether tickets can be assigned to groups or not, and the maximum attachment size. The Redmine API key can be found at: `https://<host>/redmine/my/account` where `host` must be replaced with the host of your Redmine. Input the Label, URL, API key data and the optional Redmine specific settings. Press `ENTER` key to move to the next editor or press `ENTER` key on the last editor to accept the Identity.
@@ -177,9 +177,9 @@ Add Redmine Identity
 
 Label: CustomerRedmine
 URL: https://mycompany/redmine
-Api key: 65e5e5333e9390d27e304cc40c568683c7aaa5aa 
+Api key: 65e5e5333e9390d27e304cc40c568683c7aaa5aa
 Allow Issue Assignment To Groups: [X]
-Maximum Attachment Size KB (default = 5120): 
+Maximum Attachment Size KB (default = 5120):
 ```
 
 Back in the Manage Redmine Identities Page you will see one Identity entry in the list:

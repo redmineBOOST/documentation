@@ -3,7 +3,7 @@ layout: documentation
 title: Reference
 id: reference
 ---
-# Language Reference (2022-08-18)
+# Language Reference (2023-02-28)
 
 The modifiers have the following meanings:
 
@@ -1755,16 +1755,17 @@ GetUsers (group: Group|undefined, name: string|undefined, userStatus: undefined|
 
 ```
 Issue {
-    id: issue
-    assignedTo: GetCurrentUser()
-    project: GetProject(identifier = "ProjectIdentifier")
-    tracker: GetTracker(name = "Feature")
-    subject: "Subject"
+    id: issue;
+    assignedTo: GetCurrentUser();
+    project: GetProject(identifier: "ProjectIdentifier");
+    tracker: GetTracker(name: "Feature");
+    subject: "Subject";
     description:
     |"This
     |"is
     |"a
     |"Description
+    ;
 }
 ```
 
@@ -1772,11 +1773,11 @@ Issue {
 
 ```
 UpdateIssue {
-    issue: GetIssue(id = 1)
-    subject: "New Subject"
+    issue: GetIssue(id: 1);
+    subject: "New Subject";
 
     Note {
-        text: "Note text"
+        text: "Note text";
     }
 }
 ```
@@ -1785,13 +1786,13 @@ UpdateIssue {
 
 ```
 User {
-    firstname: "Firstname"
-    lastname: "Lastname"
-    login: "Login"
-    mail: "abc@example.com"
+    firstname: "Firstname";
+    lastname: "Lastname";
+    login: "Login";
+    mail: "abc@example.com";
 
     Authentication {
-        password: "12345678"
+        password: "12345678";
     }
 }
 ```

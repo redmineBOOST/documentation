@@ -41,16 +41,16 @@ The Item scope `<predefinedTypeSpecifier> {...}` can contain multiple [Property 
 The instantiable Items can be defined as follows:
 ```
 let issue1: Issue = Issue {
-    project: GetProject(identifier="project1")
-    subject: "Parent Issue Subject"
-    tracker: GetTracker(name="tracker1")
+    project: GetProject(identifier: "project1");
+    subject: "Parent Issue Subject";
+    tracker: GetTracker(name: "tracker1");
 
     Issue {
-        project: GetProject(identifier="project1")
-        subject: "Child Issue Subject"
-        tracker: GetTracker(name="tracker1")
+        project: GetProject(identifier: "project1");
+        subject: "Child Issue Subject";
+        tracker: GetTracker(name: "tracker1");
     }
-}
+};
 ```
 
 The Issue in the example with *identifier* `issue1` was defined with all required properties (`project`, `subject` and `tracker`). Furthermore it also contains a nested primary Issue. The nesting of the primary item automatically results in setting the parent property of the nested Issue to `issue1`. As a result an Issue with subject *Parent Issue Subject* in project *project1* containing a Child-Issue with subject *Child Issue Subject* would be created in Redmine.
@@ -60,16 +60,16 @@ Primary Item Instantiations result in structural child items, otherwise the item
 Example:
 ```
 let issue1: Issue = Issue {
-    project: GetProject(identifier="project1")
-    subject: "Parent Issue Subject"
-    tracker: GetTracker(name="tracker1")
+    project: GetProject(identifier: "project1");
+    subject: "Parent Issue Subject";
+    tracker: GetTracker(name: "tracker1");
 
     let issue2Subject: Issue = Issue {
-        project: GetProject(identifier="project1")
-        subject: "Child Issue Subject"
-        tracker: GetTracker(name="tracker1")
-    }.subject
-}
+        project: GetProject(identifier: "project1");
+        subject: "Child Issue Subject";
+        tracker: GetTracker(name: "tracker1");
+    }.subject;
+};
 ```
 
 In this example, the nested issue is no primary item because its `subject` property is accessed immediately. Therefore, it is not a child Issue of `issue1`.
@@ -78,29 +78,29 @@ In this example, the nested issue is no primary item because its `subject` prope
 
 Property Definitions set specific attributes of the containing [Item Instantiation](#itemInstantiations).
 
-> Each property is beginning with a lowercase letter.
+> Property identifiers must start with a lowercase letter.
 
 The format of a property definition is defined as follows:
 
-`<identifier>: <expression>? (Newline | ;)`
+`<identifier>: <expression>? ;`
 
 `identifier`: Identifier used to reference the property in the [Item](#item).
 
 `expression`: The property assignment expression can be assigned with Literals, Enumerations constants, Items and Query invocation results.
 
-`Newline | ;`: Each property definition must end with a line break or a semicolon.
+`;`: Each property definition must end with a semicolon.
 
 ### <a name="itemFieldDeclarations"></a> Item Field Declarations
 
 Fields can be assigned with Literals, Enumeration values, Items and Query invocation results.
 
-> Fields have the type specified so the assigning type has to match the defined field type.
+> Fields are typed so the assigning type has to match the defined field type.
 
 Field identifiers must begin with a lowercase letter.
 
 Fields are declared as follows:
 
-`let <identifier>: <typeSpecifier> = <expression> (Newline | ;)`
+`let <identifier>(: <typeSpecifier>)? = <expression> ;`
 
 `identifier`: Identifier used to reference the field.
 
@@ -110,16 +110,16 @@ Fields are declared as follows:
 
 `expression`: The field assignment expression can be assigned with Literals, Enumerations constants, Items, Item Instantiations and Query invocation results.
 
-`Newline | ;`: Each field declaration must end with a line break or a semicolon.
+`;`: Each field declaration must end with a line break or a semicolon.
 
 Example:
 ```
 Issue {
-    let subjectText: string = "Example Subject"
+    let subjectText: string = "Example Subject";
 
-    project: GetProject(identifier="project1")
-    subject: subjectText
-    tracker: GetTracker(name="tracker1")
+    project: GetProject(identifier: "project1");
+    subject: subjectText;
+    tracker: GetTracker(name: "tracker1");
 }
 ```
 
@@ -151,15 +151,15 @@ Each [property](#propertyDefinitions) and [field](#itemFieldDeclarations) is vis
 
 Example:
 ```
-let subjectText: string = "Example Subject"
+let subjectText: string = "Example Subject";
 Issue {
-    project: GetProject(identifier="project1")
-    subject: subjectText
-    tracker: GetTracker(name="tracker1")
+    project: GetProject(identifier: "project1");
+    subject: subjectText;
+    tracker: GetTracker(name: "tracker1");
 
     Note {
         // Reference the subject of the issue
-        text: subject
+        text: subject;
     }
 }
 ```
@@ -175,7 +175,7 @@ All properties of the returned item are considered `readonly`; query-returned It
 
 Queries are defined as follows:
 
-`<identifier> ( (<argumentIdentifier>=<expression> (,<argumentIdentifier>=<expression>)* )? )`
+`<identifier> ( (<argumentIdentifier>: <expression> (,<argumentIdentifier>: <expression>)* )? )`
 
 `identifier`: Identifier of the query.
 
@@ -185,8 +185,8 @@ Queries are defined as follows:
 
 Queriess can be used as follows:
 ```
-GetUser(id=1)
-GetUser(login="mmustermann")
+GetUser(id: 1)
+GetUser(login: "mmustermann")
 ```
 
 In the example the query `GetUser` is called one time with the parameter `id` set to `1` and another time with the parameter `login` set to `mmustermann`.
@@ -222,8 +222,8 @@ RBO supports basic Array concatanations with the `+` sign.
 
 The additive expression is defined as follows:
 ```
-let array1: [int32] = [1, 2] + [3, 4]
-let array2: [int32] = [1, 2] + 3
+let array1: [int32] = [1, 2] + [3, 4];
+let array2: [int32] = [1, 2] + 3;
 ```
 
 In the example the field `array1` is initialized with two arrays (`[1, 2]`, `[3, 4]`). Therefore `array1` contains in the end the values `[1, 2, 3, 4]`.
@@ -269,14 +269,14 @@ It is forbidden to access a deleted Item. If a deleted Item was in an array, it 
 Example:
 ```
 User {
-    login: "mmustermann"
-    firstname: "Max"
-    lastname: "Mustermann"
-    mail: "max.mustermann@example.com"
-    status: UserStatus.Locked
+    login: "mmustermann";
+    firstname: "Max";
+    lastname: "Mustermann";
+    mail: "max.mustermann@example.com";
+    status: UserStatus.Locked;
 
     Authentication {
-        password: "a1b2c3d4"
+        password: "a1b2c3d4";
     }
 }
 ```
@@ -290,8 +290,8 @@ The `Authentication` item can only be instantiated inside the `User` and `Update
 Example:
 ```
 Choice<string> {
-    description: "Matrix"
-    options: ["Blue Pill", "Red Pill"]
+    description: "Matrix";
+    options: ["Blue Pill", "Red Pill"];
 }
 ```
 The example demonstrates the instantiation of the Generic Item `Choice<T>` which has one type parameter `T` which is set to `string`.
